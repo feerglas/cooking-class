@@ -1,0 +1,24 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations, getStaticPathsForPage } from '../../i18n/utils';
+import LanguagePicker from '../../components/LangSwitch.astro';
+
+const t = useTranslations(getLangFromUrl(Astro.url));
+
+export function getStaticPaths() {
+  return getStaticPathsForPage();
+}
+
+// const { locale } = Astro.params;
+---
+
+<Layout title="Cooking class generator">
+  <main>
+    <LanguagePicker />
+    <p>test page {t('nav.foo')}</p>
+  </main>
+</Layout>
+
+<style>
+  
+</style>
