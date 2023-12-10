@@ -1,9 +1,13 @@
 import fs from 'node:fs/promises';
 import Papa from 'papaparse';
 
+const csvFileName = 'ingredients.csv';
+
 export const ingredientsData = async () => {
   try {
-    const csvUrl = new URL('../../ingredients.csv', import.meta.url);
+    const csvPath = import.meta.env.MODE === "development" ? `../../../public/${csvFileName}` : `../../${csvFileName}`;
+    const csvUrl = new URL(csvPath, import.meta.url);
+
     const csvData = await fs.readFile(csvUrl, 'utf-8');
 
     const parseConfig = {
