@@ -1,8 +1,12 @@
 export const ui = {
   en: {
-    'nav.foo': 'Home',
+    'general.fruits': 'Fruits',
+    'general.vegetables': 'Vegetables',
+    'general.spices': 'Spices',
   },
   de: {
-    'nav.foo': 'Start',
+    'general.fruits': 'Früchte',
+    'general.vegetables': 'Gemüse',
+    'general.spices': 'Gewürze',
   },
 };
