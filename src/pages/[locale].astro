@@ -2,7 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations, getStaticPathsForPage } from '../i18n/utils';
 import LanguagePicker from '../components/LangSwitch.astro';
-import { ingredientsData } from '../data/ingredients/ingredients';
+import { ingredientsData } from '../data/ingredients';
+import {
+  filterArrayOfObjects,
+  sortArrayOfObjects
+} from '../data/dataHelper';
 
 export function getStaticPaths() {
   return getStaticPathsForPage();
@@ -10,8 +14,9 @@ export function getStaticPaths() {
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const ingredients = await ingredientsData();
-
+const ingredientsRaw = await ingredientsData();
+const filtered = filterArrayOfObjects(ingredientsRaw, 'category', 'fruits');
+const ingredients = sortArrayOfObjects(filtered, lang);
 ---
 
 <Layout title="Cooking class generator">
