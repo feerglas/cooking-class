@@ -3,6 +3,8 @@ import { ui } from './ui';
 export const languages = {
   en: 'English',
   de: 'Deutsch',
+  fr: 'Français',
+  it: 'Italiano'
 };
 
 export const defaultLang = 'en';
@@ -10,7 +12,7 @@ export const defaultLang = 'en';
 export function getLangFromUrl(url) {
   const [, lang] = url.pathname.split('/');
 
-  if (lang in ui) {
+  if (lang in languages) {
     return lang
   }
 
