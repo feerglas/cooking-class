@@ -1,10 +1,8 @@
 ---
-import Layout from "../../layouts/Layout.astro";
+import Layout from '../../layouts/Layout.astro';
 import { getStaticPathsForPage } from '../../i18n/utils';
 
-export function getStaticPaths() {
-  return getStaticPathsForPage();
-}
+export const getStaticPaths = getStaticPathsForPage;
 
 // const { locale } = Astro.params;
 ---
@@ -14,7 +12,3 @@ export function getStaticPaths() {
     test page
   </main>
 </Layout>
-
-<style>
-  
-</style>

@@ -1,19 +1,21 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { getLangFromUrl, useTranslations, getStaticPathsForPage } from '../i18n/utils';
+import Layout from '../layouts/Layout.astro';
+import {
+  getLangFromUrl,
+  getStaticPathsForPage,
+  // useTranslations,
+} from '../i18n/utils';
 import LanguagePicker from '../components/LangSwitch.astro';
 import { ingredientsData } from '../data/ingredients';
 import {
   filterArrayOfObjects,
-  sortArrayOfObjects
+  sortArrayOfObjects,
 } from '../data/dataHelper';
 
-export function getStaticPaths() {
-  return getStaticPathsForPage();
-}
+export const getStaticPaths = getStaticPathsForPage;
 
 const lang = getLangFromUrl(Astro.url);
-const t = useTranslations(lang);
+// const t = useTranslations(lang);
 const ingredientsRaw = await ingredientsData();
 const filtered = filterArrayOfObjects(ingredientsRaw, 'category', 'fruits');
 const ingredients = sortArrayOfObjects(filtered, lang);
@@ -30,7 +32,3 @@ const ingredients = sortArrayOfObjects(filtered, lang);
     <!-- <p>new localized index {t('nav.foo')}</p> -->
   </main>
 </Layout>
-
-<style>
-  
-</style>

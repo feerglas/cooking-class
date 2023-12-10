@@ -5,7 +5,10 @@ const csvFileName = 'ingredients.csv';
 
 export const ingredientsData = async () => {
   try {
-    const csvPath = import.meta.env.MODE === "development" ? `../../public/${csvFileName}` : `../../${csvFileName}`;
+    const csvPath = import.meta.env.MODE === 'development'
+      ? `../../public/${csvFileName}`
+      : `../../${csvFileName}`;
+
     const csvUrl = new URL(csvPath, import.meta.url);
 
     const csvData = await fs.readFile(csvUrl, 'utf-8');
@@ -25,4 +28,4 @@ export const ingredientsData = async () => {
 
     return [];
   }
-}
+};

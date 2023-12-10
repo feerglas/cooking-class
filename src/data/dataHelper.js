@@ -1,19 +1,19 @@
 export const ingredientCategories = {
-  vegetables: 'vegetables',
   fruits: 'fruits',
   herbs: 'herbs',
+  vegetables: 'vegetables',
 };
 
 export const sortArrayOfObjects = (array, sortKey) => {
-  const sortedData = array.sort(function(a,b){
-    let x = a[sortKey].toLowerCase();
-    let y = b[sortKey].toLowerCase();
+  const sortedData = array.sort((a, b) => {
+    const x = a[sortKey].toLowerCase();
+    const y = b[sortKey].toLowerCase();
 
-    if (x>y) {
+    if (x > y) {
       return 1;
     }
 
-    if (x<y) {
+    if (x < y) {
       return -1;
     }
 
@@ -23,8 +23,4 @@ export const sortArrayOfObjects = (array, sortKey) => {
   return sortedData;
 };
 
-export const filterArrayOfObjects = (array, key, value) => {
-  return array.filter((item) => {
-    return item[key] === value;
-  });
-};
+export const filterArrayOfObjects = (array, key, value) => array.filter((item) => item[key] === value);
