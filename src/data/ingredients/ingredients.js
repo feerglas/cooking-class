@@ -3,7 +3,7 @@ import Papa from 'papaparse';
 
 export const ingredientsData = async () => {
   try {
-    const csvUrl = new URL('./ingredients.csv', import.meta.url);
+    const csvUrl = new URL('../../ingredients.csv', import.meta.url);
     const csvData = await fs.readFile(csvUrl, 'utf-8');
 
     const parseConfig = {
@@ -18,5 +18,7 @@ export const ingredientsData = async () => {
   } catch (error) {
     console.warn('Error parsing the ingredients csv.');
     console.log(error);
+
+    return [];
   }
 }
