@@ -2,21 +2,26 @@
 import Layout from "../layouts/Layout.astro";
 import { getLangFromUrl, useTranslations, getStaticPathsForPage } from '../i18n/utils';
 import LanguagePicker from '../components/LangSwitch.astro';
-import { getIngredients } from "../data/helper";
+import { ingredientsData } from '../data/ingredients/ingredients';
 
 export function getStaticPaths() {
   return getStaticPathsForPage();
 }
 
-const t = useTranslations(getLangFromUrl(Astro.url));
-const ingredients = await getIngredients();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const ingredients = await ingredientsData();
 
 ---
 
 <Layout title="Cooking class generator">
   <main>
     <LanguagePicker />
-    <p>{JSON.stringify(ingredients)}</p>
+    <div>
+      {ingredients.map((ingredient) => (
+        <p>{ingredient[lang]}</p>
+      ))}
+    </div>
     <!-- <p>new localized index {t('nav.foo')}</p> -->
   </main>
 </Layout>
