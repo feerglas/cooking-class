@@ -1,0 +1,115 @@
+id,category,en,de,fr,it,season
+1,vegetables,artichoke,Artischocke,artichaut,carciofo,7:10
+2,vegetables,asparagus,Spargel,asperge,asparago,4:6
+3,vegetables,aubergine,Aubergine,aubergine,melanzana,6:10
+4,vegetables,autumn turnip,Herbstrübe,rave d’automne,rapa autunnale,9:12
+5,vegetables,batavia salad,Batavia,laitue batavia,lattuga batavia,3:11
+6,vegetables,bean,Bohne,haricot,fagiolo,6:10
+7,vegetables,beetroot,Rande,betterave,barbabietola,6:10
+8,vegetables,bell pepper,Peperoni,poivron,peperone,6:10
+9,vegetables,black salsify,Schwarzwurzel,scorsonère,scorzonera,1:5;10:12
+10,vegetables,bok choy,Pak-Choi,pak-choi,pak-choi,4:11
+11,vegetables,broccoli,Broccoli,brocoli,broccoli,5:11
+12,vegetables,brussels sprouts,Rosenkohl,chou de bruxelles,cavoli di bruxelles,1:2;9:12
+13,vegetables,carrot,Karotte,carotte,carota,6:11
+14,vegetables,cauliflower,Blumenkohl,chou-fleur,cavolfiore,5:11
+15,vegetables,celeriac,Knollensellerie,céleri-pomme,sedano rapa,6:10
+16,vegetables,chickpea,Kichererbse,pois chiche,cece,8:8
+17,vegetables,chicory,Chicorée,chicorée,cicoria belga,1:12
+18,vegetables,chinese cabbage,Chinakohl,chou de chine,cavolo cinese,1:3;5:12
+19,vegetables,courgette,Zucchetti,courgette,zucchina,5:10
+20,vegetables,cucumber,Gurke,concombre,cetriolo,4:10
+21,vegetables,endive salad,Endivie,endive,indivia,5:11
+22,vegetables,fennel,Fenchel,fenouil,finocchio,5:11
+23,vegetables,flower sprouts,Flower Sprouts,flower sprout,flower sprout,1:3;11:12
+24,vegetables,garlic,Knoblauch,ail,aglio,1:4;6:12
+25,vegetables,head lettuce,Kopfsalat,laitue pommée,lattuga cappuccio,2:12
+26,vegetables,iceberg lettuce,Eisbergsalat,laitue iceberg,lattuga iceberg,4:10
+27,vegetables,jerusalem artichoke,Topinambur,topinambour,topinambur,1:3;11:12
+28,vegetables,kale,Federkohl,chou plume,cavolo piuma,1:3;11:12
+29,vegetables,kardy,Kardy,cardon,cardo,10:11
+30,vegetables,kohlrabi,Kohlrabi,chou-pomme,cavolo rapa,4:11
+31,vegetables,lacinato kale,Palmkohl,chou palmier,cavolo nero,1:3;11:12
+32,vegetables,lamb’s lettuce,Nüsslisalat,rampon,formentino / valerianella,1:12
+33,vegetables,leek,Lauch,poireau,porro,1:12
+34,vegetables,lentil,Linse,lentille,lenticchia,6:10
+35,vegetables,lettuce,Lattich,laitue romaine,lattuga romana,5:10
+36,vegetables,lollo,Lollo,lollo,lollo,4:11
+37,vegetables,lupine,Lupine,lupin,lupino,7:10
+38,vegetables,melon,Melone,melon,melone,6:9
+39,vegetables,oak leaf lettuce,Eichblatt,feuille de chêne,lattuga foglia di quercia,3:12
+40,vegetables,onion,Zwiebel,oignon,cipolla,4:11
+41,vegetables,parsnip,Pastinake,panais,pastinaca,1:3;7:12
+42,vegetables,patisson squash,Patisson,pâtisson,patisson,7:9
+43,vegetables,pea,Erbse,petit pois,pisello,6:7
+44,vegetables,pointed cabbage,Spitzkohl,chou pointu,cavolo a punta,9:11
+45,vegetables,potato,Kartoffel,pomme de terre,patata,6:10
+46,vegetables,puntarelle,Catalogna,catalonia,catalogna,5:12
+47,vegetables,purslane,Portulak,pourpier,portulaca,1:12
+48,vegetables,quinoa,Quinoa,quinoa,quinoa,7:8
+49,vegetables,radicchio,Cicorino Rosso,cicorino rosso,cicorino rosso,1:2;6:12
+50,vegetables,radish,Rettich,grand radis,rafano daikon,3:12
+51,vegetables,red cabbage,Rotkabis,chou rouge,cabis rosso,6:10
+52,vegetables,rhubarb,Rhabarber,rhubarbe,rabarbaro,4:6
+53,vegetables,rocket,Rucola,roquette,rucola,3:11
+54,vegetables,romanesco,Romanesco,romanesco,romanesco,5:11
+55,vegetables,root parsley,Wurzelpetersilie,racine de persil,prezzemolo radice,1:2;10:12
+56,vegetables,sauerkraut,Sauerkraut,choucroute,crauti,5:10
+57,vegetables,savoy cabbage,Wirz,chou frisé,verza,1:12
+58,vegetables,scallion,Schalotte,echalote,scalogno,1:5;7:12
+59,vegetables,small radish,Radieschen,petit radis,rapanello,1:12
+60,vegetables,soy,Soja,soja,soia,7:9
+61,vegetables,spinach,Spinat,epinard,spinacio,3:12
+62,vegetables,squash,Kürbis,courge,zucca,1:2;8:12
+63,vegetables,stalk celery,Stangensellerie,céleri-branche,sedano da coste,5:12
+64,vegetables,sugar pea,Kefe,pois mange-tout,pisello mangiatutto,6:9
+65,vegetables,sugarloaf chicory,Zuckerhut,chicorée pain de sucre,cicoria pan di zucchero,1:3;6:12
+66,vegetables,sweet corn,Zuckermais,maïs doux,mais dolce,8:11
+67,vegetables,swiss chard,Krautstiel / Mangold,côte de bette,bietola da costa,3:11
+68,vegetables,tomato,Tomate,tomate,pomodoro,4:11
+69,vegetables,turnip,Mairübe,navet,rapa primaverile,4:6
+70,vegetables,white cabbage,Weisskabis,chou blanc,cabis bianco,5:10
+71,vegetables,yellow turnip,Bodenkohlrabi,chou-rave,cavolo navone,1:4;7:12
+72,fruits,apple,Apfel,pomme,mela,7:10
+73,fruits,apricot,Aprikose,abricot,albicocca,6:9
+74,fruits,aronia berry,Aroniabeere,aronia,aronia,9:10
+75,fruits,blackberry,Brombeere,mûre,mora,6:9
+76,fruits,blueberry,Heidelbeere,myrtille,mirtillo,7:9
+77,fruits,cherry,Kirsche,cerise,ciliegia,6:8
+78,fruits,cranberry,Preiselbeere,airelle,mirtillo rosso,6:10
+79,fruits,fig,Feige,figue,fico,8:9
+80,fruits,goji berry,Gojibeere,baie de goji,bacca di goji,8:9
+81,fruits,gooseberry,Stachelbeere,groseille à maquereau,uva spina,6:9
+82,fruits,grape,Traube,grappe de raisin,uva,8:10
+83,fruits,kiwi,Kiwi,kiwi,kiwi,10:12
+84,fruits,mini kiwi,Mini-Kiwi,mini kiwi,mini-kiwi,9:10
+85,fruits,mirabelle plum,Mirabelle,mirabelle,mirabella,8:9
+86,fruits,nectarine,Nektarine,nectarine,nettarina,7:8
+87,fruits,peach,Pfirsich,pêche,pesca,7:8
+88,fruits,pear,Birne,poire,pera,8:10
+89,fruits,plum,Zwetschge,pruneau,prugna,7:9
+90,fruits,quince,Quitte,coing,cotogno,9:11
+91,fruits,rasperry,Himbeere,framboise,lampone,6:9
+92,fruits,redcurrant,Johannisbeere,raisinets,ribes,6:8
+93,fruits,strawberry,Erdbeere,fraise,fragola,5:9
+94,herbs,basil,Basilikum,basilic,basilico,2:10
+95,herbs,chamomile,Kamille,camomille,camomilla,6:9
+96,herbs,chives,Schnittlauch,ciboulette,erba cipollina,1:12
+97,herbs,coriander,Koriander,coriandre,coriandolo,1:10
+98,herbs,cress,Kresse,cresson,crescione,3:9
+99,herbs,crimson beebalm,Goldmelisse,fleur de monarde,monarda didyma,7:9
+100,herbs,dill,Dill,aneth,aneto,5:9
+101,herbs,elder,Holunder,sureau,sambucus,9:10
+102,herbs,lemon balm,Zitronenmelisse,mélisse,melissa,6:8
+103,herbs,lovage,Liebstöckel,livèche,sedano di monte,5:8
+104,herbs,marjoram,Majoran,marjolaine,origano maggiorana,8:9
+105,herbs,oregano,Oregano,origan,origano,5:9
+106,herbs,parsley,Petersilie,persil,prezzemolo,4:11
+107,herbs,peppermint,Pfefferminze,menthe poivrée,mentha,7:9
+108,herbs,rosehip,Hagebutte,cynorhodon,cinòrrodo,9:11
+109,herbs,rosemary,Rosmarin,romarin,rosmarino,5:8
+110,herbs,saffron,Safran,safran,zafferano,10:11
+111,herbs,sage,Salbei,sauge,salvia,4:11
+112,herbs,tarragon,Estragon,estragon,estragone,6:8
+113,herbs,wild garlic,Bärlauch,ail des ours,aglio orsino,3:4
+114,herbs,yarrow,Schafgarbe,achillée,achillea,6:9
