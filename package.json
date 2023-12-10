@@ -7,11 +7,23 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "npm run lint:styles && npm run lint:js",
+    "lint:styles": "npx stylelint '**/*.astro'",
+    "lint:js": "eslint . --ext .js,.mjs,.astro"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.0",
-    "astro": "^4.0.3",
-    "papaparse": "^5.4.1"
+    "astro": "^4.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.55.0",
+    "eslint-plugin-astro": "^0.30.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "papaparse": "^5.4.1",
+    "sass": "^1.69.5",
+    "stylelint": "^15.11.0",
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-standard-scss": "^11.1.0"
   }
 }
