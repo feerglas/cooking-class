@@ -1,0 +1,7 @@
+@use '/src/styles/functions' as fn;
+
+.list {
+  box-shadow: var(--shadow-s);
+  border-radius: fn.to-rem(var(--border-radius-l));
+  overflow: hidden;
+}

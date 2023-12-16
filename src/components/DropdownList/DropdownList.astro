@@ -1,0 +1,17 @@
+---
+const {
+  items,
+} = Astro.props;
+
+import DropdownItem from '../DropdownItem/DropdownItem.astro';
+---
+
+<ul class="list">
+  {items.map((item) => (
+    <DropdownItem item={item} />
+  ))}
+</ul>
+
+<style lang="scss">
+  @import './DropdownList.module';
+</style>
