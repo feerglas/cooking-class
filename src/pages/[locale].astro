@@ -1,34 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {
-  getLangFromUrl,
+  // getLangFromUrl,
   getStaticPathsForPage,
   // useTranslations,
 } from '../i18n/utils';
-import LanguagePicker from '../components/LangSwitch.astro';
-import { ingredientsData } from '../data/ingredients';
-import {
-  filterArrayOfObjects,
-  sortArrayOfObjects,
-} from '../data/dataHelper';
+import LanguagePicker from '../components/LangSwitch/LangSwitch.astro';
+// import { ingredientsData } from '../data/ingredients';
+// import {
+// filterArrayOfObjects,
+// sortArrayOfObjects,
+// } from '../data/dataHelper';
+// import Badge from '../components/Badge/Badge.astro';
 
 export const getStaticPaths = getStaticPathsForPage;
 
-const lang = getLangFromUrl(Astro.url);
+// const lang = getLangFromUrl(Astro.url);
 // const t = useTranslations(lang);
-const ingredientsRaw = await ingredientsData();
-const filtered = filterArrayOfObjects(ingredientsRaw, 'category', 'fruits');
-const ingredients = sortArrayOfObjects(filtered, lang);
+// const ingredientsRaw = await ingredientsData();
+// const filtered = filterArrayOfObjects(ingredientsRaw, 'category', 'fruits');
+// const ingredients = sortArrayOfObjects(filtered, lang);
 ---
 
 <Layout title="Cooking class generator">
   <main>
+    <!-- <Badge /> -->
     <LanguagePicker />
-    <div>
+
+    <!--
+    <div class="foo">
       {ingredients.map((ingredient) => (
         <p>{ingredient[lang]}</p>
       ))}
     </div>
+    -->
     <!-- <p>new localized index {t('nav.foo')}</p> -->
   </main>
 </Layout>
