@@ -1,0 +1,115 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mixins' as mx;
+@use '/src/styles/mediaqueries' as mq;
+
+:root {
+  --button-text-color: var(--color-white);
+  --button-text-color-hover: var(--color-white);
+  --button-background-color: var(--color-blue-700);
+  --button-background-color-hover: var(--color-blue-800);
+
+  --button-font-size: var(--font-size-base);
+  --button-border-radius: var(--border-radius-l);
+  --button-padding-v: var(--spacing-s);
+  --button-padding-h: var(--spacing-l);
+  --button-icon-height: var(--size-l);
+  --button-icon-gap: var(--spacing-xs);
+
+  .button--color-red {
+    --button-background-color: var(--color-red-700);
+    --button-background-color-hover: var(--color-red-800);
+  }
+
+  .button--color-green {
+    --button-background-color: var(--color-green-700);
+    --button-background-color-hover: var(--color-green-800);
+  }
+
+  .button--color-black {
+    --button-background-color: var(--color-gray-700);
+    --button-background-color-hover: var(--color-gray-800);
+  }
+
+  @include mq.color-scheme-dark {
+    .button--color-black {
+      --button-text-color: var(--color-gray-800);
+      --button-text-color-hover: var(--color-blue-600);
+      --button-background-color: var(--color-white);
+      --button-background-color-hover: var(--color-white);
+    }
+  }
+
+  .button--size-xs {
+    --button-font-size: var(--font-size-s);
+    --button-padding-v: var(--spacing-xs);
+    --button-padding-h: var(--spacing-2s);
+    --button-icon-height: var(--size-m);
+  }
+
+  .button--size-s {
+    --button-padding-v: var(--spacing-xs);
+    --button-padding-h: var(--spacing-2s);
+    --button-icon-height: var(--size-m);
+  }
+
+  .button--size-l {
+    --button-font-size: var(--font-size-m);
+    --button-padding-v: var(--spacing-2s);
+    --button-padding-h: var(--spacing-l);
+    --button-icon-height: var(--size-xl);
+  }
+
+  .button--size-xl {
+    --button-font-size: var(--font-size-m);
+    --button-padding-v: var(--spacing-3s);
+    --button-padding-h: var(--spacing-xl);
+    --button-icon-height: var(--size-xl);
+  }
+}
+
+.button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  display: block;
+
+  cursor: pointer;
+  font-size: fn.to-rem(var(--button-font-size));
+  line-height: 150%;
+  font-weight: 500;
+  border-radius: fn.to-rem(var(--button-border-radius));
+  padding: fn.to-rem(var(--button-padding-v)) fn.to-rem(var(--button-padding-h));
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+
+  @include mx.default-transition;
+  transition-property: color, background-color;
+
+  &__label {
+    display: block;
+  }
+  
+  &__icon {
+    height: fn.to-rem(var(--button-icon-height));
+  }
+
+  &--icon {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: fn.to-rem(var(--button-icon-gap));
+  }
+
+  &:hover {
+    @include mq.mouse-only {
+      background-color: var(--button-background-color-hover);
+      color: var(--button-text-color-hover);
+    }
+  }
+
+  &:focus {
+    background-color: var(--button-background-color-hover);
+    color: var(--button-text-color-hover);
+  }
+}

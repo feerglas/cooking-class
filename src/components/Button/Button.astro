@@ -1,0 +1,30 @@
+---
+import Icon from '../Icon/icon.astro';
+
+const {
+  color,
+  icon,
+  label,
+  size,
+} = Astro.props;
+
+const classes = [
+  'button',
+  icon
+    ? 'button--icon'
+    : '',
+  `button--size-${size}`,
+  `button--color-${color}`,
+];
+
+---
+<button class:list={classes}>
+  {icon &&
+    <Icon class="button__icon" name={icon} />
+  }
+  <span class="button__label">{label}</span>
+</button>
+
+<style lang="scss">
+  @import './Button.module';
+</style>
