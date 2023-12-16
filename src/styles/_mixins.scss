@@ -1,0 +1,19 @@
+@use '/src/styles/mediaqueries' as mq;
+
+@mixin sr-only() {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@mixin default-transition {
+  transition-duration: var(--transition-default-duration);
+  transition-timing-function: var(--transition-default-timing-function);
+
+  @include mq.reduced-motion {
+    transition: none;
+  }
+}

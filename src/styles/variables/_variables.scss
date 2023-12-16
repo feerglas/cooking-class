@@ -1,0 +1,100 @@
+@import './colors';
+
+:root {
+  color-scheme: light dark;
+
+  // font family
+  --font-family: system-ui, blinkmacsystemfont, arial, sans-serif;
+  --font-line-height: 1.6;
+
+  // base size unit
+  --base-size-unit: 3;
+
+  // spacings
+  --spacing-xxs: 4;
+  --spacing-xs: 8;
+  --spacing-s: 10;
+  --spacing-2s: 12;
+  --spacing-3s: 14;
+  --spacing-m: 16;
+  --spacing-l: 20;
+  --spacing-xl: 24;
+  --spacing-2xl: 28;
+  --spacing-3xl: 32;
+  --spacing-4xl: 36;
+  --spacing-5xl: 40;
+  --spacing-6xl: 44;
+  --spacing-7xl: 48;
+  --spacing-8xl: 52;
+
+  // sizes
+  --size-xxs: 4;
+  --size-xs: 8;
+  --size-s: 12;
+  --size-m: 16;
+  --size-l: 20;
+  --size-xl: 24;
+  --size-2xl: 28;
+  --size-3xl: 32;
+  --size-4xl: 36;
+  --size-5xl: 40;
+  --size-6xl: 44;
+  --size-7xl: 48;
+  --size-8xl: 52;
+
+  // content
+  --content-max-width: 780;
+  --content-padding: 30;
+
+  // border
+  --border-weight-s: 1;
+  --border-radius-l: 8;
+
+  // font scale
+  --font-size-base: 14;
+  --font-size-xs: 10;
+  --font-size-s: 12;
+  --font-size-m: 16;
+  --font-size-l: 20;
+  --font-size-xl: 28;
+  --font-size-xxl: 36;
+
+  // shadows
+  --shadow-s: 0 1px 2px 0 rgba(0, 0, 0, 8%);
+
+  // colors
+  --color-foreground: var(--color-gray-900);
+  --color-background: var(--color-gray-50);
+
+  --color-navitem: var(--color-gray-700);
+  --color-navitem-hover: var(--color-blue-700);
+  --color-navitem-bg-hover: var(--color-gray-200);
+
+  @include mq.color-scheme-dark {
+    --color-foreground: var(--color-gray-50);
+    --color-background: var(--color-gray-900);
+
+    --color-navitem: var(--color-gray-300);
+    --color-navitem-hover: var(--color-blue-300);
+    --color-navitem-bg-hover: var(--color-gray-800);
+  }
+
+  // transition
+  --transition-default-duration: 155ms;
+  --transition-default-timing-function: ease-in-out;
+
+  /*
+  @include mq.breakpoint($from: micro) {
+    --base-size-unit: 4;
+  }
+
+  @include mq.breakpoint($from: small) {
+    --base-size-unit: 4;
+  }
+
+  @include mq.breakpoint($from: medium) {
+    --content-padding: 0;
+  }
+  */
+}
+
