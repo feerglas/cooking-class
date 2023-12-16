@@ -9,7 +9,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "lint": "npm run lint:styles && npm run lint:js",
-    "lint:styles": "npx stylelint '**/*.astro'",
+    "lint:styles": "npx stylelint '**/*.scss'",
     "lint:js": "eslint . --ext .js,.mjs,.astro"
   },
   "dependencies": {
