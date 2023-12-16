@@ -1,6 +1,11 @@
 import fs from 'node:fs/promises';
 import Papa from 'papaparse';
 
+/**
+ * The CSV data was generated based on information from:
+ * https://www.schweizerbauern.ch/saisonkalender/saisonkalender-kraeuter/
+ */
+
 const csvFileName = 'ingredients.csv';
 
 export const ingredientsData = async () => {
