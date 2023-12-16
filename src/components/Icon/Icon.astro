@@ -1,0 +1,25 @@
+---
+const {
+  name,
+  class: className,
+} = Astro.props;
+
+const {
+  default: icon,
+} = await import(`./icons/${name}.svg?raw`);
+
+const classes = [
+  'icon-component',
+  className,
+];
+
+---
+{/* eslint-disable astro/no-set-html-directive */}
+<span class:list={classes}>
+  <Fragment set:html={icon} />
+</span>
+{/* eslint-enable astro/no-set-html-directive */}
+
+<style is:global lang="scss">
+  @import './Icon.module';
+</style>

@@ -1,0 +1,10 @@
+@use '/src/styles/functions' as fn;
+
+.icon-component {
+  display: block;
+
+  & svg {
+    height: 100%;
+    display: block;
+  }
+}
