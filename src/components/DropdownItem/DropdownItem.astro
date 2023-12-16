@@ -1,0 +1,26 @@
+---
+const {
+  item,
+} = Astro.props;
+
+import Icon from '../Icon/Icon.astro';
+---
+
+<li class="item">
+  <a
+    class="link"
+    href={item.link}
+  >
+    {item.icon &&
+      <Icon name={item.icon} class="icon" />
+    }
+    <span class="label">
+      {item.label}
+    </span>
+  </a>
+</li>
+
+<style lang="scss">
+  @import './DropdownItem.module';
+</style>
+

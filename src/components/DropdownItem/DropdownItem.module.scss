@@ -1,0 +1,42 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mixins' as mx;
+@use '/src/styles/mediaqueries' as mq;
+
+.item {
+  display: block;
+  font-size: fn.to-rem(var(--font-size-base));
+  line-height: fn.to-rem(var(--font-size-base));
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: fn.to-rem(var(--spacing-s));
+  text-decoration: none;
+  color: var(--color-navitem);
+  padding: fn.to-rem(var(--spacing-s)) fn.to-rem(var(--spacing-m));
+
+  @include mx.default-transition;
+  transition-property: color, background-color;
+
+  &:hover {
+    @include mq.mouse-only {
+      color: var(--color-navitem-hover);
+      background-color: var(--color-navitem-bg-hover);
+    }
+  }
+
+  &:focus {
+    color: var(--color-navitem-hover);
+    background-color: var(--color-navitem-bg-hover);
+  }
+}
+
+.icon {
+  height: fn.to-rem(var(--size-m));
+}
+
+.label {
+  display: block;
+}
