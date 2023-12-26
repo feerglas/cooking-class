@@ -3,6 +3,7 @@ import {
   defaultLang,
   languages,
 } from './src/i18n/utils';
+import solidJs from '@astrojs/solid-js';
 
 export default defineConfig({
   i18n: {
@@ -12,5 +13,6 @@ export default defineConfig({
       prefixDefaultLocale: true,
     },
   },
+  integrations: [solidJs()],
   scopedStyleStrategy: 'class',
 });

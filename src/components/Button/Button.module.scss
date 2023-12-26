@@ -5,8 +5,6 @@
 :root {
   --button-text-color: var(--color-white);
   --button-text-color-hover: var(--color-white);
-  --button-background-color: var(--color-blue-700);
-  --button-background-color-hover: var(--color-blue-800);
 
   --button-font-size: var(--font-size-base);
   --button-border-radius: var(--border-radius-l);
@@ -14,6 +12,11 @@
   --button-padding-h: var(--spacing-l);
   --button-icon-height: var(--size-l);
   --button-icon-gap: var(--spacing-xs);
+
+  .button--color-primary {
+    --button-background-color: var(--color-blue-700);
+    --button-background-color-hover: var(--color-blue-800);
+  }
 
   .button--color-red {
     --button-background-color: var(--color-red-700);
@@ -88,10 +91,13 @@
 
   &__label {
     display: block;
+    flex: 1 0 auto;
   }
   
   &__icon {
-    height: fn.to-rem(var(--button-icon-height));
+    // display: block;
+    // height: fn.to-rem(var(--button-icon-height));
+    width: 20px;
   }
 
   &--icon {

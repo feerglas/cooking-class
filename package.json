@@ -10,16 +10,19 @@
     "astro": "astro",
     "lint": "npm run lint:styles && npm run lint:js",
     "lint:styles": "npx stylelint '**/*.scss'",
-    "lint:js": "eslint . --ext .js,.mjs,.astro"
+    "lint:js": "eslint . --ext .js,.jsx,.mjs,.astro"
   },
   "dependencies": {
+    "@astrojs/solid-js": "^3.0.2",
     "@supabase/supabase-js": "^2.39.0",
-    "astro": "^4.0.3"
+    "astro": "^4.0.3",
+    "solid-js": "^1.8.7"
   },
   "devDependencies": {
     "eslint": "^8.55.0",
     "eslint-plugin-astro": "^0.30.0",
     "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-solid": "^0.13.0",
     "papaparse": "^5.4.1",
     "sass": "^1.69.5",
     "stylelint": "^15.11.0",

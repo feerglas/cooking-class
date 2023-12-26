@@ -5,7 +5,8 @@ import {
   getStaticPathsForPage,
   // useTranslations,
 } from '../i18n/utils';
-import LanguagePicker from '../components/LangSwitch/LangSwitch.astro';
+import LanguagePicker from '../components/LangSwitch/LangSwitch';
+
 // import { ingredientsData } from '../data/ingredients';
 // import {
 // filterArrayOfObjects,
@@ -25,7 +26,7 @@ export const getStaticPaths = getStaticPathsForPage;
 <Layout title="Cooking class generator">
   <main>
     <!-- <Badge /> -->
-    <LanguagePicker />
+    <LanguagePicker client:load />
 
     <!--
     <div class="foo">
