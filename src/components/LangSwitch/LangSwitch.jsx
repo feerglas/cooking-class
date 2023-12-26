@@ -1,29 +1,29 @@
-import { languages } from '../../i18n/utils';
+import { createSignal } from 'solid-js';
 import Dropdown from '../DropdownList/DropdownList';
 import Button from '../Button/Button';
-// import styles from './LangSwitch.module.scss';
+import styles from './LangSwitch.module.scss';
 
-export default function LangSwitch() {
-  const items = Object.entries(languages)
-    .map(([
-      link,
-      label,
-    ]) => ({
-      icon: link,
-      label,
-      link: `/${link}`,
-    }));
+export default function LangSwitch(props) {
+  const [
+    dropdownVisible,
+    setDropdownVisible,
+  ] = createSignal(false);
 
   return (
     <div>
       <Button
-        label='some button text'
         color='primary'
         size='s'
-        icon='de'
+        icon={props.lang}
+        click={() => {
+          setDropdownVisible(!dropdownVisible());
+        }}
       />
       <Dropdown
-        items={items}
+        classes={dropdownVisible()
+          ? styles['dropdown--visible']
+          : styles['dropdown--hidden']}
+        items={props.items}
       />
     </div>
   );

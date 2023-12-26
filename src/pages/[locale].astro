@@ -1,8 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import {
-  // getLangFromUrl,
+  getLangFromUrl,
   getStaticPathsForPage,
+  languages,
   // useTranslations,
 } from '../i18n/utils';
 import LanguagePicker from '../components/LangSwitch/LangSwitch';
@@ -16,17 +17,33 @@ import LanguagePicker from '../components/LangSwitch/LangSwitch';
 
 export const getStaticPaths = getStaticPathsForPage;
 
-// const lang = getLangFromUrl(Astro.url);
+const currentLang = getLangFromUrl(Astro.url);
 // const t = useTranslations(lang);
 // const ingredientsRaw = await ingredientsData();
 // const filtered = filterArrayOfObjects(ingredientsRaw, 'category', 'fruits');
 // const ingredients = sortArrayOfObjects(filtered, lang);
+
+const langItems = Object.entries(languages)
+  .map(([
+    link,
+    label,
+  ]) => ({
+    icon: link,
+    label,
+    link: `/${link}`,
+  }))
+  .filter((item) => item.icon !== currentLang);
 ---
 
 <Layout title="Cooking class generator">
   <main>
     <!-- <Badge /> -->
-    <LanguagePicker client:load />
+
+    <LanguagePicker
+      client:load
+      lang={currentLang}
+      items={langItems}
+    />
 
     <!--
     <div class="foo">

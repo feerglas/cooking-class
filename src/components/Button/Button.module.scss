@@ -95,9 +95,7 @@
   }
   
   &__icon {
-    // display: block;
-    // height: fn.to-rem(var(--button-icon-height));
-    width: 20px;
+    width: fn.to-rem(var(--size-3xl));
   }
 
   &--icon {
