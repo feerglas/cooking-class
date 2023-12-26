@@ -11,7 +11,7 @@ export default function LangSwitch() {
     ]) => ({
       icon: link,
       label,
-      link,
+      link: `/${link}`,
     }));
 
   return (
