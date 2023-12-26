@@ -10,7 +10,7 @@ export default function LangSwitch(props) {
   ] = createSignal(false);
 
   return (
-    <div>
+    <>
       <Button
         color='primary'
         size='s'
@@ -24,8 +24,11 @@ export default function LangSwitch(props) {
           ? styles['dropdown--visible']
           : styles['dropdown--hidden']}
         items={props.items}
+        click={() => {
+          setDropdownVisible(!dropdownVisible());
+        }}
       />
-    </div>
+    </>
   );
 }
 

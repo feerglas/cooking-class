@@ -7,6 +7,9 @@ export default function DropdownItem(props) {
       <a
         class={styles.link}
         href={props.item.link}
+        onClick={() => {
+          props.click();
+        }}
       >
         {props.item.icon &&
           <Icon

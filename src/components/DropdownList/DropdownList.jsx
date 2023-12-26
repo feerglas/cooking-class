@@ -7,7 +7,7 @@ export default function DropdownList(props) {
     <ul
       class={`${styles.list} ${props.classes}`}
     >
-      <For each={props.items}>{(item) => <DropdownItem item={item} />}</For>
+      <For each={props.items}>{(item) => <DropdownItem item={item} click={props.click} />}</For>
     </ul>
   );
 }
