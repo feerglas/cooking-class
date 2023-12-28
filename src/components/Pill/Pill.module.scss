@@ -1,0 +1,109 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mixins' as mx;
+@use '/src/styles/mediaqueries' as mq;
+
+:root {
+  --pill-border-radius: var(--border-radius-m);
+  --pill-padding-v: var(--spacing-xxxs);
+
+  .pill--color-gray {
+    --pill-text-color: var(--color-gray-900);
+    --pill-background-color: var(--color-gray-100);
+  }
+
+  .pill--color-red {
+    --pill-text-color: var(--color-red-800);
+    --pill-background-color: var(--color-red-100);
+  }
+
+  .pill--color-yellow {
+    --pill-text-color: var(--color-yellow-800);
+    --pill-background-color: var(--color-yellow-100);
+  }
+
+  .pill--color-green {
+    --pill-text-color: var(--color-green-800);
+    --pill-background-color: var(--color-green-100);
+  }
+
+  .pill--color-primary {
+    --pill-text-color: var(--color-blue-800);
+    --pill-background-color: var(--color-blue-100);
+  }
+
+  .pill--color-indigo {
+    --pill-text-color: var(--color-indigo-800);
+    --pill-background-color: var(--color-indigo-100);
+  }
+
+  .pill--color-purple {
+    --pill-text-color: var(--color-purple-800);
+    --pill-background-color: var(--color-purple-100);
+  }
+
+  .pill--color-pink {
+    --pill-text-color: var(--color-pink-800);
+    --pill-background-color: var(--color-pink-100);
+  }
+
+  .pill--size-s {
+    --pill-font-size: var(--font-size-s);
+    --pill-padding-h: var(--spacing-xs);
+  }
+
+  .pill--size-l {
+    --pill-font-size: var(--font-size-base);
+    --pill-padding-h: var(--spacing-2s);
+  }
+
+  @include mq.color-scheme-dark {
+    .pill {
+      --pill-background-color: var(--color-gray-700);
+    }
+
+    .pill--color-gray {
+      --pill-text-color: var(--color-gray-300);
+    }
+
+    .pill--color-red {
+      --pill-text-color: var(--color-red-400);
+    }
+  
+    .pill--color-yellow {
+      --pill-text-color: var(--color-yellow-300);
+    }
+  
+    .pill--color-green {
+      --pill-text-color: var(--color-green-400);
+    }
+  
+    .pill--color-primary {
+      --pill-text-color: var(--color-blue-400);
+    }
+  
+    .pill--color-indigo {
+      --pill-text-color: var(--color-indigo-400);
+    }
+  
+    .pill--color-purple {
+      --pill-text-color: var(--color-purple-400);
+    }
+  
+    .pill--color-pink {
+      --pill-text-color: var(--color-pink-500);
+    }
+  }
+}
+
+.pill {
+  font-family: var(--font-family);
+  font-size: fn.to-rem(var(--pill-font-size));
+  color: var(--pill-text-color);
+  border-radius: fn.to-rem(var(--pill-border-radius));
+  background-color: var(--pill-background-color);
+  padding: fn.to-rem(var(--pill-padding-v)) fn.to-rem(var(--pill-padding-h));
+
+  @include mq.color-scheme-dark {
+    border: fn.to-rem(0.5) solid currentColor;
+  }
+}
