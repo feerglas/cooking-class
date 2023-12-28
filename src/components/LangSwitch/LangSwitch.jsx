@@ -21,7 +21,7 @@ export default function LangSwitch(props) {
       />
       <Dropdown
         classes={dropdownVisible()
-          ? styles['dropdown--visible']
+          ? styles['dropdown']
           : styles['dropdown--hidden']}
         items={props.items}
         click={() => {
