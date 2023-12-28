@@ -6,7 +6,7 @@ export default function Icon(props) {
   return (
     <span
       class={`${styles.icon} ${props.class}`}
-      innerHTML={icons.flags[props.name]}
+      innerHTML={icons[props.name]}
     />
   );
 }
