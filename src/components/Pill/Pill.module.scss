@@ -49,11 +49,13 @@
   .pill--size-s {
     --pill-font-size: var(--font-size-s);
     --pill-padding-h: var(--spacing-xs);
+    --pill-icon-size: var(--size-s);
   }
 
   .pill--size-l {
     --pill-font-size: var(--font-size-base);
     --pill-padding-h: var(--spacing-2s);
+    --pill-icon-size: var(--size-2s);
   }
 
   @include mq.color-scheme-dark {
@@ -96,14 +98,48 @@
 }
 
 .pill {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-family);
   font-size: fn.to-rem(var(--pill-font-size));
+  line-height: 150%;
   color: var(--pill-text-color);
   border-radius: fn.to-rem(var(--pill-border-radius));
   background-color: var(--pill-background-color);
   padding: fn.to-rem(var(--pill-padding-v)) fn.to-rem(var(--pill-padding-h));
+  gap: fn.to-rem(var(--spacing-xxs));
+  border: fn.to-rem(0.5) solid transparent;
 
   @include mq.color-scheme-dark {
-    border: fn.to-rem(0.5) solid currentColor;
+    border-color: currentcolor;
+  }
+
+  &__icon {
+    display: block;
+    height: fn.to-rem(var(--pill-icon-size));
+  }
+
+  &--button {
+    @include mx.default-transition;
+    transition-property: border-color, background-color;
+    cursor: pointer;
+
+    &:hover {
+      @include mq.mouse-only {
+        border-color: currentcolor;
+
+        @include mq.color-scheme-dark {
+          background-color: var(--color-gray-600);
+        }
+      }
+    }
+  
+    &:focus {
+      border-color: currentcolor;
+
+      @include mq.color-scheme-dark {
+        background-color: var(--color-gray-600);
+      }
+    }
   }
 }

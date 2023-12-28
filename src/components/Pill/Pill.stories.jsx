@@ -17,6 +17,28 @@ export default {
         'pink',
       ],
     },
+    iconAfter: {
+      control: {
+        type: 'select',
+      },
+      options: [
+        'de',
+        'fr',
+        'it',
+        'en',
+      ],
+    },
+    iconBefore: {
+      control: {
+        type: 'select',
+      },
+      options: [
+        'de',
+        'fr',
+        'it',
+        'en',
+      ],
+    },
     size: {
       control: {
         type: 'select',
@@ -32,6 +54,7 @@ export default {
 
 export const Pill = {
   args: {
+    click: false,
     color: 'primary',
     label: 'Pill',
     size: 'l',
