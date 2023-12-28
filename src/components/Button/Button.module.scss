@@ -71,12 +71,6 @@
 }
 
 .button {
-  appearance: none;
-  -webkit-appearance: none;
-  background: none;
-  border: none;
-  display: block;
-
   font-family: var(--font-family);
   cursor: pointer;
   font-size: fn.to-rem(var(--button-font-size));
