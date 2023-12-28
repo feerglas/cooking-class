@@ -24,37 +24,5 @@ const lang = getLangFromUrl(Astro.url);
   </body>
 </html>
 <style is:global lang="scss">
-  @use '../styles/mediaqueries' as mq;
-  @use '../styles/functions' as fn;
-  @import '../styles/variables/variables';
-
-  html {
-    font-size: calc(var(--font-size-base) * 1px);
-  }
-
-  body {
-    font-family: var(--font-family);
-    font-size: fn.to-rem(var(--font-size-base));
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    line-height: var(--font-line-height);
-  }
-
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    hyphens: auto;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-
-  .layout {
-    max-width: fn.to-rem(var(--content-max-width));
-    margin: 0 auto;
-    padding: 0 fn.to-rem(var(--content-padding));
-  }
-
+  @import '../styles/global';
 </style>

@@ -1,0 +1,40 @@
+@use './mediaqueries' as mq;
+@use './functions' as fn;
+@import './variables/variables';
+
+html {
+  font-size: calc(var(--font-size-base) * 1px);
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: fn.to-rem(var(--font-size-base));
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  line-height: var(--font-line-height);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  hyphens: auto;
+}
+
+ul {
+  list-style-type: none;
+}
+
+button {
+  appearance: none;
+  -webkit-appearance: none;
+  background: none;
+  border: none;
+  display: block;
+}
+
+.layout {
+  max-width: fn.to-rem(var(--content-max-width));
+  margin: 0 auto;
+  padding: 0 fn.to-rem(var(--content-padding));
+}
