@@ -10,22 +10,22 @@ export const LangSwitch = {
       {
         icon: 'de',
         label: 'Deutsch',
-        link: '/de',
+        link: '#',
       },
       {
         icon: 'en',
         label: 'English',
-        link: '/en',
+        link: '#',
       },
       {
         icon: 'fr',
         label: 'Francais',
-        link: '/fr',
+        link: '#',
       },
       {
         icon: 'it',
         label: 'Italiano',
-        link: '/it',
+        link: '#',
       },
     ],
     lang: 'de',
