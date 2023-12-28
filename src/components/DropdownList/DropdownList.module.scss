@@ -1,7 +1,18 @@
 @use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+
+:root {
+  --dropdown-box-shadow: var(--shadow-s);
+
+  @include mq.color-scheme-dark {
+    --dropdown-box-shadow: var(--shadow-s-dark-mode);
+  }
+}
 
 .list {
-  box-shadow: var(--shadow-s);
+  padding: 0;
+  margin: 0;
+  box-shadow: var(--dropdown-box-shadow);
   border-radius: fn.to-rem(var(--border-radius-l));
   overflow: hidden;
 }

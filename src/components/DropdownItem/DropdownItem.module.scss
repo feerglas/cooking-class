@@ -2,10 +2,27 @@
 @use '/src/styles/mixins' as mx;
 @use '/src/styles/mediaqueries' as mq;
 
+:root {
+  --dropdown-item-color-text: var(--color-gray-700);
+  --dropdown-item-color-text-hover: var(--color-blue-700);
+  --dropdown-item-color-bg: var(--color-white);
+  --dropdown-item-color-bg-hover: var(--color-gray-200);
+
+  @include mq.color-scheme-dark {
+    --dropdown-item-color-text: var(--color-gray-300);
+    --dropdown-item-color-text-hover: var(--color-blue-300);
+    --dropdown-item-color-bg: var(--color-gray-700);
+    --dropdown-item-color-bg-hover: var(--color-gray-800);
+  }
+
+}
+
 .item {
+  font-family: var(--font-family);
   display: block;
   font-size: fn.to-rem(var(--font-size-base));
   line-height: fn.to-rem(var(--font-size-base));
+  background-color: var(--dropdown-item-color-bg);
 }
 
 .link {
@@ -14,7 +31,7 @@
   justify-content: flex-start;
   gap: fn.to-rem(var(--spacing-s));
   text-decoration: none;
-  color: var(--color-navitem);
+  color: var(--dropdown-item-color-text);
   padding: fn.to-rem(var(--spacing-s)) fn.to-rem(var(--spacing-m));
 
   @include mx.default-transition;
@@ -22,14 +39,14 @@
 
   &:hover {
     @include mq.mouse-only {
-      color: var(--color-navitem-hover);
-      background-color: var(--color-navitem-bg-hover);
+      color: var(--dropdown-item-color-text-hover);
+      background-color: var(--dropdown-item-color-bg-hover);
     }
   }
 
   &:focus {
-    color: var(--color-navitem-hover);
-    background-color: var(--color-navitem-bg-hover);
+    color: var(--dropdown-item-color-text-hover);
+    background-color: var(--dropdown-item-color-bg-hover);
   }
 }
 

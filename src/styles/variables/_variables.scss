@@ -64,22 +64,15 @@
 
   // shadows
   --shadow-s: 0 1px 2px 0 rgba(0, 0, 0, 8%);
+  --shadow-s-dark-mode: 0px 1px 3px 0px rgba(0, 0, 0, 10%), 0px 1px 2px 0px rgba(0, 0, 0, 6%);
 
   // colors
   --color-foreground: var(--color-gray-900);
   --color-background: var(--color-gray-50);
 
-  --color-navitem: var(--color-gray-700);
-  --color-navitem-hover: var(--color-blue-700);
-  --color-navitem-bg-hover: var(--color-gray-200);
-
   @include mq.color-scheme-dark {
     --color-foreground: var(--color-gray-50);
     --color-background: var(--color-gray-900);
-
-    --color-navitem: var(--color-gray-300);
-    --color-navitem-hover: var(--color-blue-300);
-    --color-navitem-bg-hover: var(--color-gray-800);
   }
 
   // transition
