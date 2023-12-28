@@ -1,3 +1,4 @@
+@use '../mediaqueries' as mq;
 @import './colors';
 
 :root {
@@ -11,6 +12,7 @@
   --base-size-unit: 3;
 
   // spacings
+  --spacing-xxxs: 2;
   --spacing-xxs: 4;
   --spacing-xs: 8;
   --spacing-s: 10;
@@ -48,6 +50,7 @@
 
   // border
   --border-weight-s: 1;
+  --border-radius-m: 6;
   --border-radius-l: 8;
 
   // font scale
