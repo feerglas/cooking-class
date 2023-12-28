@@ -1,6 +1,19 @@
 import LangSwitchComp from './LangSwitch.jsx';
 
 export default {
+  argTypes: {
+    lang: {
+      control: {
+        type: 'select',
+      },
+      options: [
+        'de',
+        'fr',
+        'it',
+        'en',
+      ],
+    },
+  },
   component: LangSwitchComp,
 };
 
