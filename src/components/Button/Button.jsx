@@ -11,7 +11,9 @@ export default function Button(props) {
         [styles[`button--color-${props.color}`]]: props.color,
       }}
       onClick={() => {
-        props.click();
+        if (props.click) {
+          props.click();
+        }
       }}
     >
       {props.icon &&
