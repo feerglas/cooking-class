@@ -1,0 +1,48 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+
+:root {
+  --section-header-background: var(--color-gray-100);
+  --section-content-background: var(--color-white);
+  --section-border-color: var(--color-gray-200);
+  --section-box-shadow: var(--shadow-s);
+
+  @include mq.color-scheme-dark {
+    --section-header-background: var(--color-gray-700);
+    --section-content-background: var(--color-gray-900);
+    --section-border-color: var(--color-gray-700);
+  }
+}
+
+.section {
+  border-radius: fn.to-rem(var(--border-radius-l));
+  overflow: hidden;
+  border: fn.to-rem(1) solid var(--section-border-color);
+  box-shadow: var(--section-box-shadow);
+
+  &__header {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: fn.to-rem(var(--spacing-l));
+    background-color: var(--section-header-background);
+  }
+
+  &__index {
+    font-size: fn.to-rem(var(--text-m));
+    padding-right: fn.to-rem(var(--spacing-s));
+  }
+
+  &__heading {
+    flex: 1;
+  }
+
+  &__button {
+    margin-left: fn.to-rem(var(--spacing-l));
+  }
+
+  &__content {
+    background-color: var(--section-content-background);
+    padding: fn.to-rem(var(--spacing-l));
+  }
+}
