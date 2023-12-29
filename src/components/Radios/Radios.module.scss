@@ -1,0 +1,7 @@
+@use '/src/styles/functions' as fn;
+
+.radios {
+  display: inline-flex;
+  flex-direction: column;
+  row-gap: fn.to-rem(var(--spacing-2s));
+}
