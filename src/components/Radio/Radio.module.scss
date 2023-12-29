@@ -1,0 +1,46 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+@use '/src/styles/mixins' as mx;
+
+:root {
+  --radio-border-color: var(--color-gray-300);
+  --radio-background-color: var(--color-gray-50);
+  --radio-border-color-checked: var(--color-blue-700);
+
+  @include mq.color-scheme-dark {
+    --radio-border-color: var(--color-gray-600);
+    --radio-background-color: var(--color-gray-700);
+    --radio-border-color-checked: var(--color-blue-600);
+  }
+}
+
+.radio {
+  display: flex;
+  gap: fn.to-rem(var(--spacing-xs));
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+
+  &__input {
+    cursor: pointer;
+    appearance: none;
+    border-radius: 50%;
+    width: fn.to-rem(var(--size-m));
+    height: fn.to-rem(var(--size-m));
+    border: fn.to-rem(.5) solid var(--radio-border-color);
+    background-color: var(--radio-background-color);
+
+    @include mx.default-transition;
+    transition-property: border-color, border-width;
+
+    &:checked {
+      border: fn.to-rem(3.5) solid var(--radio-border-color-checked);
+    }
+  }
+
+  &__label {
+    cursor: pointer;
+    font-size: fn.to-rem(var(--text-base));
+    line-height: 100%;
+  }
+}
