@@ -9,6 +9,7 @@ export default function Button(props) {
         [styles['button--icon']]: props.icon,
         [styles[`button--size-${props.size}`]]: props.size,
         [styles[`button--color-${props.color}`]]: props.color,
+        [props.classes]: props.classes,
       }}
       onClick={() => {
         if (props.click) {

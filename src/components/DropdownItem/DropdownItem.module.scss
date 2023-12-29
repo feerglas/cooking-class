@@ -20,8 +20,8 @@
 .item {
   font-family: var(--font-family);
   display: block;
-  font-size: fn.to-rem(var(--font-size-base));
-  line-height: fn.to-rem(var(--font-size-base));
+  font-size: fn.to-rem(var(--text-base));
+  line-height: fn.to-rem(var(--text-base));
   background-color: var(--dropdown-item-color-bg);
 }
 

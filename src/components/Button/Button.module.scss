@@ -6,7 +6,7 @@
   --button-text-color: var(--color-white);
   --button-text-color-hover: var(--color-white);
 
-  --button-font-size: var(--font-size-base);
+  --button-font-size: var(--text-base);
   --button-border-radius: var(--border-radius-l);
   --button-padding-v: var(--spacing-s);
   --button-padding-h: var(--spacing-l);
@@ -43,7 +43,7 @@
   }
 
   .button--size-xs {
-    --button-font-size: var(--font-size-s);
+    --button-font-size: var(--text-s);
     --button-padding-v: var(--spacing-xs);
     --button-padding-h: var(--spacing-2s);
     --button-icon-height: var(--size-m);
@@ -56,14 +56,14 @@
   }
 
   .button--size-l {
-    --button-font-size: var(--font-size-m);
+    --button-font-size: var(--text-m);
     --button-padding-v: var(--spacing-2s);
     --button-padding-h: var(--spacing-l);
     --button-icon-height: var(--size-xl);
   }
 
   .button--size-xl {
-    --button-font-size: var(--font-size-m);
+    --button-font-size: var(--text-m);
     --button-padding-v: var(--spacing-3s);
     --button-padding-h: var(--spacing-xl);
     --button-icon-height: var(--size-xl);
@@ -74,8 +74,8 @@
   font-family: var(--font-family);
   cursor: pointer;
   font-size: fn.to-rem(var(--button-font-size));
+  font-weight: normal;
   line-height: 150%;
-  font-weight: 500;
   border-radius: fn.to-rem(var(--button-border-radius));
   padding: fn.to-rem(var(--button-padding-v)) fn.to-rem(var(--button-padding-h));
   color: var(--button-text-color);

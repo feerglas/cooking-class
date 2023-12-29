@@ -12,7 +12,7 @@ export default function LangSwitch(props) {
   return (
     <>
       <Button
-        color='primary'
+        color='black'
         size='s'
         icon={props.lang}
         click={() => {

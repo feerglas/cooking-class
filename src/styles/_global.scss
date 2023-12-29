@@ -3,12 +3,12 @@
 @import './variables/variables';
 
 html {
-  font-size: calc(var(--font-size-base) * 1px);
+  font-size: calc(var(--text-base) * 1px);
 }
 
 body {
   font-family: var(--font-family);
-  font-size: fn.to-rem(var(--font-size-base));
+  font-size: fn.to-rem(var(--text-base));
   background-color: var(--color-background);
   color: var(--color-foreground);
   line-height: var(--font-line-height);

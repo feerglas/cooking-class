@@ -7,7 +7,11 @@ export default function Section(props) {
       component={`h${props.level}`}
       class={`
         ${styles.heading}
-        ${styles[`heading--level-${props.visualLevel || props.level}`]}`}
+        ${styles[`heading--level-${props.visualLevel || props.level}`]}
+        ${props.classes
+      ? props.classes
+      : ''}
+      `}
     >
       {props.text}
     </Dynamic>

@@ -46,6 +46,9 @@
   --size-8xl: 52;
 
   // font sizes
+  --text-s: 12;  
+  --text-base: 14;
+  --text-m: 16;
   --text-l: 18;
   --text-xl: 20;
   --text-2xl: 24;
@@ -61,15 +64,6 @@
   --border-weight-s: 1;
   --border-radius-m: 6;
   --border-radius-l: 8;
-
-  // font scale
-  --font-size-base: 14;
-  --font-size-xs: 10;
-  --font-size-s: 12;
-  --font-size-m: 16;
-  --font-size-l: 20;
-  --font-size-xl: 28;
-  --font-size-xxl: 36;
 
   // shadows
   --shadow-s: 0 1px 2px 0 rgba(0, 0, 0, 8%);

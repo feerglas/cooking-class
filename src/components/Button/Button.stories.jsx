@@ -42,6 +42,7 @@ export default {
 export const Button = {
   args: {
     color: 'primary',
+    icon: false,
     label: 'Button',
     size: 's',
   },
