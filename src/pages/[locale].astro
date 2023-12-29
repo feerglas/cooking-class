@@ -7,6 +7,9 @@ import {
   // useTranslations,
 } from '../i18n/utils';
 import LanguagePicker from '../components/LangSwitch/LangSwitch';
+import Form from '../components/Form/Form';
+import Fieldset from '../components/Fieldset/Fieldset';
+import Radios from '../components/Radios/Radios';
 
 // import { ingredientsData } from '../data/ingredients';
 // import {
@@ -33,6 +36,30 @@ const langItems = Object.entries(languages)
     link: `/${link}`,
   }))
   .filter((item) => item.icon !== currentLang);
+
+const radios = [
+  {
+    checked: false,
+    id: 'radio-id-1',
+    label: 'some label 1',
+    name: 'radio-name',
+    value: 'radio-value-1',
+  },
+  {
+    checked: false,
+    id: 'radio-id-2',
+    label: 'some label 2',
+    name: 'radio-name',
+    value: 'radio-value-2',
+  },
+  {
+    checked: true,
+    id: 'radio-id-3',
+    label: 'some label 3',
+    name: 'radio-name',
+    value: 'radio-value-3',
+  },
+];
 ---
 
 <Layout title="Cooking class generator">
@@ -44,6 +71,15 @@ const langItems = Object.entries(languages)
       lang={currentLang}
       items={langItems}
     />
+
+    <Form>
+      <Fieldset
+        legend="Please select your preferred contact method:"
+        visible={false}
+      >
+        <Radios radios={radios} />
+      </Fieldset>
+    </Form>
 
     <!--
     <div class="foo">
