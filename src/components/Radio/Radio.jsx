@@ -10,6 +10,11 @@ export default function Radio(props) {
         name={props.name}
         class={styles['radio__input']}
         checked={props.checked}
+        onChange={(evt) => {
+          if (props.change && evt.srcElement.checked) {
+            props.change(props.value);
+          }
+        }}
       />
       <label
         for={props.id}
