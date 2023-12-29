@@ -1,0 +1,15 @@
+.fieldset {
+  $root: &;
+  display: inline;
+  border: 2px solid red;
+
+  &__legend {
+    #{$root}--hidden & {
+      display: none;
+    }
+  }
+
+  &--hidden {
+    border: none;
+  }
+}
