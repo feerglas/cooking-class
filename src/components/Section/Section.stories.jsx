@@ -17,7 +17,7 @@ export default {
 
 export const Section = {
   args: {
-    button: buttonArgs.IconButton.args,
+    button: buttonArgs.IconAfter.args,
     heading: {
       level: '1',
       text: 'Heading Text',
