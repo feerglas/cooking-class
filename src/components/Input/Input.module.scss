@@ -1,0 +1,96 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+@use '/src/styles/mixins' as mx;
+
+:root {
+  --input-color-placeholder: var(--color-gray-400);
+  --input-color: var(--color-gray-900);
+  --input-border-color: var(--color-gray-300);
+  --input-border-color-active: var(--color-blue-600);
+  --input-background-color: var(--color-gray-50);
+
+  @include mq.color-scheme-dark {
+    --input-color: var(--color-white);
+    --input-border-color: var(--color-gray-600);
+    --input-border-color-active: var(--color-blue-500);
+    --input-background-color: var(--color-gray-700);
+  }
+}
+
+.input {
+  $root: &;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+
+  &__input {
+    background-color: var(--input-background-color);
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    color: var(--input-color);
+    font-size: fn.to-rem(var(--text-m));
+    border-radius: fn.to-rem(var(--border-radius-l));
+    padding: fn.to-rem(var(--spacing-3s)) fn.to-rem(var(--spacing-6xl)) fn.to-rem(var(--spacing-3s)) fn.to-rem(var(--spacing-m));
+    border: fn.to-rem(1) solid var(--input-border-color);
+    outline: none;
+
+    @include mx.default-transition;
+    transition-property: border-color;
+
+    #{$root}--filter & {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: var(--input-border-color-active);
+    }
+
+    &::placeholder {
+      color: var(--input-color-placeholder);
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - fn.to-rem(var(--spacing-6xl) / 2));
+    right: 0;
+    width: fn.to-rem(var(--spacing-6xl));
+    height: fn.to-rem(var(--spacing-6xl));
+    color: var(--color-gray-400);
+
+    @include mx.default-transition;
+    transition-property: color;
+
+    @include mq.mouse-only {
+      &:hover {
+        color: var(--color-gray-800);
+      }
+    }
+
+    &:focus {
+      color: var(--color-gray-800);
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  &__button-icon {
+    width: fn.to-rem(var(--size-2s));
+
+    & svg * {
+      fill: currentcolor;
+    }
+  }
+}
