@@ -46,6 +46,16 @@ export default function Input(props) {
           setInputValue(evt.currentTarget.value);
           setShowClearButton(evt.srcElement.value.length > 0);
         }}
+        onFocus={() => {
+          if (props.focus) {
+            props.focus();
+          }
+        }}
+        onBlur={() => {
+          if (props.blur) {
+            props.blur();
+          }
+        }}
         value={inputValue()}
       />
 

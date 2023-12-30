@@ -12,6 +12,11 @@ export default function Autocomplete(props) {
     setItems,
   ] = createSignal([]);
 
+  const [
+    showList,
+    setShowList,
+  ] = createSignal(false);
+
   createEffect(() => {
     setItems(props.items);
   });
@@ -20,10 +25,19 @@ export default function Autocomplete(props) {
     <div class={styles['autocomplete']}>
       <Input
         {...props.input}
+        focus={() => {
+          setShowList(true);
+        }}
+        blur={() => {
+          setShowList(false);
+        }}
       />
 
       <AutocompleteList
-        classes={styles['autocomplete__list']}
+        classList={{
+          [styles['autocomplete__list']]: true,
+          [styles['autocomplete__list--visible']]: showList(),
+        }}
         items={items()}
       />
     </div>

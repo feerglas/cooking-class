@@ -4,7 +4,10 @@ import styles from './AutocompleteList.module.scss';
 
 export default function AutocompleteList(props) {
   return (
-    <ul class={`${styles['autocomplete-list']} ${props.classes}`}>
+    <ul
+      class={`${styles['autocomplete-list']} ${props.classes || undefined}`}
+      classList={props.classList || undefined}
+    >
       <For each={props.items}>
         {(item) => <AutocompleteItem {...item} />}
       </For>
