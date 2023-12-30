@@ -1,0 +1,20 @@
+@use '/src/styles/functions' as fn;
+
+// @use '/src/styles/mixins' as mx;
+// @use '/src/styles/mediaqueries' as mq;
+
+/*
+:root {
+  @include mq.color-scheme-dark {
+  }
+}
+*/
+
+.autocomplete {
+  position: relative;
+
+  &__list {
+    position: absolute;
+    top: calc(100% + fn.to-rem(var(--spacing-xs)));
+  }
+}
