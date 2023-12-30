@@ -33,6 +33,13 @@
     --button-background-color-hover: var(--color-gray-800);
   }
 
+  .button--color-gray {
+    --button-background-color: var(--color-gray-200);
+    --button-background-color-hover: var(--color-gray-300);
+    --button-text-color: var(--color-gray-800);
+    --button-text-color-hover: var(--color-gray-800);
+  }
+
   @include mq.color-scheme-dark {
     .button--color-black {
       --button-text-color: var(--color-gray-800);
@@ -89,8 +96,16 @@
     flex: 1 0 auto;
   }
   
-  &__icon {
+  &__icon-before {
     width: fn.to-rem(var(--size-3xl));
+  }
+
+  &__icon-after {
+    width: fn.to-rem(var(--size-m));
+
+    & * {
+      fill: currentcolor;
+    }
   }
 
   &--icon {
@@ -98,6 +113,11 @@
     flex-wrap: nowrap;
     align-items: center;
     gap: fn.to-rem(var(--button-icon-gap));
+  }
+
+  &--no-right-radius {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   &:hover {

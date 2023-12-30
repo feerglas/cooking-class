@@ -11,9 +11,19 @@ export default {
         'red',
         'green',
         'black',
+        'gray',
       ],
     },
-    icon: {
+    iconAfter: {
+      control: {
+        type: 'select',
+      },
+      options: [
+        'close',
+        'arrowDown',
+      ],
+    },
+    iconBefore: {
       control: {
         type: 'select',
       },
@@ -41,9 +51,67 @@ export default {
 
 export const Button = {
   args: {
+    click: false,
     color: 'primary',
-    icon: false,
+    iconAfter: false,
+    iconBefore: false,
     label: 'Button',
+    size: 's',
+  },
+};
+
+export const IconBefore = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: false,
+    iconBefore: 'en',
+    label: 'Button',
+    size: 's',
+  },
+};
+
+export const IconAfter = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: 'arrowDown',
+    iconBefore: false,
+    label: 'Button',
+    size: 's',
+  },
+};
+
+export const BothIcons = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: 'arrowDown',
+    iconBefore: 'en',
+    label: 'Button',
+    size: 's',
+  },
+};
+
+export const IconOnly = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: false,
+    iconBefore: 'en',
+    label: false,
+    size: 's',
+  },
+};
+
+export const NoRightBorderRadius = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: false,
+    iconBefore: false,
+    label: 'Button',
+    noRightBorderRadius: true,
     size: 's',
   },
 };

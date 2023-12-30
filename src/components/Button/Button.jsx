@@ -6,9 +6,10 @@ export default function Button(props) {
     <button
       classList={{
         [styles.button]: true,
-        [styles['button--icon']]: props.icon,
+        [styles['button--icon']]: props.iconBefore || props.iconAfter,
         [styles[`button--size-${props.size}`]]: props.size,
         [styles[`button--color-${props.color}`]]: props.color,
+        [styles['button--no-right-radius']]: props.noRightBorderRadius,
         [props.classes]: props.classes,
       }}
       onClick={() => {
@@ -17,12 +18,16 @@ export default function Button(props) {
         }
       }}
     >
-      {props.icon &&
-        <Icon class={styles['button__icon']} name={props.icon} />
+      {props.iconBefore &&
+        <Icon class={styles['button__icon-before']} name={props.iconBefore} />
       }
 
       {props.label &&
         <span class={styles['button__label']}>{props.label}</span>
+      }
+
+      {props.iconAfter &&
+        <Icon class={styles['button__icon-after']} name={props.iconAfter} />
       }
     </button>
   );
