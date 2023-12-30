@@ -19,6 +19,7 @@ export default function AutocompleteItem(props) {
         <span
           innerHTML={props.text}
           class={styles['autocomplete-item__text']}
+          data-category-id={props.categoryId}
         />
 
         {props.pills &&

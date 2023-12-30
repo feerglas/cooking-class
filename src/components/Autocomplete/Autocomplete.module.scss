@@ -14,7 +14,9 @@
   position: relative;
 
   &__list {
+    // display: none;
     position: absolute;
     top: calc(100% + fn.to-rem(var(--spacing-xs)));
+    width: 100%;
   }
 }

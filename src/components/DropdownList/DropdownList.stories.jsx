@@ -24,6 +24,7 @@ export const Radios = {
           ...itemArgs.Radio.args.radio,
           checked: false,
           id: 'radio-id-1',
+          label: 'radio cat 1',
         },
       },
       {
@@ -31,6 +32,7 @@ export const Radios = {
           ...itemArgs.Radio.args.radio,
           checked: false,
           id: 'radio-id-2',
+          label: 'radio cat 2',
         },
       },
     ],

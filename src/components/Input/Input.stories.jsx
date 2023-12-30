@@ -10,13 +10,14 @@ const dropdown = JSON.parse(JSON.stringify(dropdownArgs.Radios.args));
 dropdown.button.size = 'l';
 dropdown.button.noRightBorderRadius = true;
 dropdown.button.color = 'gray';
+dropdown.button.label = 'Alle';
 
 export const Input = {
   args: {
     closeButton: true,
     id: 'input-id',
     label: false,
-    placeholder: 'Some placeholder text',
+    placeholder: 'Zutaten durchsuchen',
   },
 };
 
@@ -26,6 +27,6 @@ export const WithFilter = {
     dropdown,
     id: 'input-id',
     label: false,
-    placeholder: 'Some placeholder text',
+    placeholder: 'Zutaten durchsuchen',
   },
 };

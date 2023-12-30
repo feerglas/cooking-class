@@ -20,4 +20,6 @@
   background-color: var(--autocomplete-list-background-color);
   border-radius: fn.to-rem(var(--border-radius-l));
   padding: fn.to-rem(var(--spacing-m)) fn.to-rem(var(--spacing-xs));
+  max-height: fn.to-rem(200);
+  overflow-y: scroll;
 }

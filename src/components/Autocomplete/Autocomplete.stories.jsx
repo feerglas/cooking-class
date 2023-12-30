@@ -1,5 +1,6 @@
 import AutocompleteComp from './Autocomplete.jsx';
 import * as listArgs from '../AutocompleteList/AutocompleteList.stories.jsx';
+import * as inputArgs from '../Input/Input.stories.jsx';
 
 export default {
   component: AutocompleteComp,
@@ -7,7 +8,8 @@ export default {
 
 export const Autocomplete = {
   args: {
-    list: listArgs.AutocompleteList.args,
+    input: inputArgs.WithFilter.args,
+    items: listArgs.AutocompleteList.args.items,
   },
 };
 
