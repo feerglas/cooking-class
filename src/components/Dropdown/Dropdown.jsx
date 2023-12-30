@@ -1,7 +1,7 @@
 import { createSignal } from 'solid-js';
-import Dropdown from '../DropdownList/DropdownList';
+import DropdownList from '../DropdownList/DropdownList';
 import Button from '../Button/Button';
-import styles from './LangSwitch.module.scss';
+import styles from './Dropdown.module.scss';
 
 export default function LangSwitch(props) {
   const [
@@ -10,25 +10,23 @@ export default function LangSwitch(props) {
   ] = createSignal(false);
 
   return (
-    <>
+    <div class={`${styles['dropdown']} ${props.classes}`}>
       <Button
-        color='black'
-        size='s'
-        icon={props.lang}
+        {...props.button}
         click={() => {
           setDropdownVisible(!dropdownVisible());
         }}
       />
-      <Dropdown
+      <DropdownList
         classes={dropdownVisible()
-          ? styles['dropdown']
-          : styles['dropdown--hidden']}
+          ? styles['dropdown__list']
+          : styles['dropdown__list--hidden']}
         items={props.items}
         click={() => {
           setDropdownVisible(!dropdownVisible());
         }}
       />
-    </>
+    </div>
   );
 }
 

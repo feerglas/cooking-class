@@ -1,0 +1,16 @@
+@use '/src/styles/functions' as fn;
+
+.dropdown {
+  position: relative;
+
+  &__list {
+    position: absolute;
+    display: inline-block;
+    top: calc(100% + fn.to-rem(var(--spacing-m)));
+    left: 0;
+
+    &--hidden {
+      display: none;
+    }
+  }
+}
