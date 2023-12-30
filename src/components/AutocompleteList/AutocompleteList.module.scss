@@ -1,0 +1,23 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+
+:root {
+  --autocomplete-list-border-color: var(--color-gray-200);
+  --autocomplete-list-background-color: var(--color-white);
+
+  @include mq.color-scheme-dark {
+    --autocomplete-list-border-color: var(--color-gray-600);
+    --autocomplete-list-background-color: var(--color-gray-700);
+  }
+}
+
+.autocomplete-list {
+  display: flex;
+  flex-direction: column;
+  row-gap: fn.to-rem(var(--spacing-xxxs));
+  box-shadow: var(--shadow-s);
+  border: fn.to-rem(1) solid var(--autocomplete-list-border-color);
+  background-color: var(--autocomplete-list-background-color);
+  border-radius: fn.to-rem(var(--border-radius-l));
+  padding: fn.to-rem(var(--spacing-m)) fn.to-rem(var(--spacing-xs));
+}
