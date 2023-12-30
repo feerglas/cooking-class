@@ -1,4 +1,5 @@
 import SectionComp from './Section.jsx';
+import * as buttonArgs from '../Button/Button.stories.jsx';
 
 export default {
   argTypes: {
@@ -16,13 +17,7 @@ export default {
 
 export const Section = {
   args: {
-    button: {
-      click: false,
-      color: 'red',
-      icon: 'de',
-      label: 'Delete',
-      size: 's',
-    },
+    button: buttonArgs.IconButton.args,
     heading: {
       level: '1',
       text: 'Heading Text',
