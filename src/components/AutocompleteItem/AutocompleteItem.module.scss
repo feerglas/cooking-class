@@ -1,0 +1,63 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+@use '/src/styles/mixins' as mx;
+
+:root {
+  --autocomplete-item-color: var(--color-gray-500);
+  --autocomplete-item-color-highlight: var(--color-blue-600);
+  --autocomplete-item-background-color-hover: var(--color-gray-100);
+
+  @include mq.color-scheme-dark {
+    --autocomplete-item-color: var(--color-gray-400);
+    --autocomplete-item-color-highlight: var(--color-blue-500);
+    --autocomplete-item-background-color-hover: var(--color-gray-600);
+  }
+}
+
+.autocomplete-item {
+  list-style-type: none;
+
+  &__button {
+    width: 100%;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: fn.to-rem(var(--spacing-2s));
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 fn.to-rem(var(--spacing-xs));
+    border-radius: fn.to-rem(var(--border-radius-m));
+
+    @include mx.default-transition;
+    transition-property: background-color;
+
+    @include mq.mouse-only {
+      &:hover {
+        background-color: var(--autocomplete-item-background-color-hover);
+      }
+    }
+
+    &:focus {
+      background-color: var(--autocomplete-item-background-color-hover);
+    }
+  }
+
+  &__text {
+    font-size: fn.to-rem(var(--text-base));
+    line-height: 150%;
+    color: var(--autocomplete-item-color);
+    text-align: left;
+    padding: fn.to-rem(var(--spacing-xxs)) 0;
+
+    & b {
+      font-weight: normal;
+      color: var( --autocomplete-item-color-highlight);
+    }
+  }
+
+  &__pills {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: fn.to-rem(var(--spacing-xs));
+  }
+}
