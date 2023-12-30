@@ -6,10 +6,16 @@ export default {
   component: DropdownComp,
 };
 
-export const Dropdown = {
+export const Links = {
   args: {
     button: buttonArgs.IconAfter.args,
-    items: dropdownItems.DropdownList.args.items,
+    items: dropdownItems.Links.args.items,
   },
 };
 
+export const Radios = {
+  args: {
+    button: buttonArgs.IconAfter.args,
+    items: dropdownItems.Radios.args.items,
+  },
+};

@@ -1,26 +1,47 @@
+import { Dynamic } from 'solid-js/web';
 import styles from './DropdownItem.module.scss';
 import Icon from '../Icon/Icon';
+import Radio from '../Radio/Radio';
 
 export default function DropdownItem(props) {
   return (
-    <li class={styles.item}>
-      <a
+    <li class={`${styles.item} ${props.radio
+      ? styles['item--radio']
+      : undefined}`}
+    >
+      <Dynamic
+        component={props.link
+          ? 'a'
+          : 'span'
+        }
         class={styles.link}
-        href={props.item.link}
+        href={props.link || undefined}
         onClick={() => {
-          props.click();
+          if (props.click && !props.radio) {
+            props.click();
+          }
         }}
       >
-        {props.item.icon &&
+        {props.link && props.icon &&
           <Icon
-            name={props.item.icon}
+            name={props.icon}
             class={styles.icon}
           />
         }
-        <span class={styles.label}>
-          {props.item.label}
-        </span>
-      </a>
+
+        {props.link &&
+          <span class={styles.label}>
+            {props.label}
+          </span>
+        }
+
+        {props.radio &&
+          <Radio
+            classes={styles['radio']}
+            {...props.radio}
+          />
+        }
+      </Dynamic>
     </li>
   );
 }

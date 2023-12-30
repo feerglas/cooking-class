@@ -14,7 +14,6 @@
     --dropdown-item-color-bg: var(--color-gray-700);
     --dropdown-item-color-bg-hover: var(--color-gray-800);
   }
-
 }
 
 .item {
@@ -33,6 +32,10 @@
   text-decoration: none;
   color: var(--dropdown-item-color-text);
   padding: fn.to-rem(var(--spacing-s)) fn.to-rem(var(--spacing-m));
+
+  .item--radio & {
+    padding: 0;
+  }
 
   @include mx.default-transition;
   transition-property: color, background-color;
@@ -57,4 +60,16 @@
 
 .label {
   display: block;
+}
+
+.radio {
+  width: 100%;
+
+  & label {
+    padding: fn.to-rem(var(--spacing-s)) fn.to-rem(var(--spacing-m)) fn.to-rem(var(--spacing-s)) 0;
+  }
+
+  & input {
+    margin-left: fn.to-rem(var(--spacing-m));
+  }
 }

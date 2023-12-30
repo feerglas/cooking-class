@@ -22,6 +22,7 @@
   user-select: none;
 
   &__input {
+    flex: 0 0 auto;
     cursor: pointer;
     appearance: none;
     border-radius: 50%;
@@ -42,5 +43,8 @@
     cursor: pointer;
     font-size: fn.to-rem(var(--text-base));
     line-height: 100%;
+    width: 100%;
+
+    // padding: 20px 0;
   }
 }

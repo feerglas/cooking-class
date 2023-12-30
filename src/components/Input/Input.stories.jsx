@@ -5,7 +5,7 @@ export default {
   component: InputComp,
 };
 
-const dropdown = JSON.parse(JSON.stringify(dropdownArgs.Dropdown.args));
+const dropdown = JSON.parse(JSON.stringify(dropdownArgs.Radios.args));
 
 dropdown.button.size = 'l';
 dropdown.button.noRightBorderRadius = true;
