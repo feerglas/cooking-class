@@ -52,6 +52,7 @@
 
 .icon {
   height: fn.to-rem(var(--size-m));
+  flex: 0 0 auto;
 }
 
 .label {

@@ -16,4 +16,5 @@
   box-shadow: var(--dropdown-box-shadow);
   border-radius: fn.to-rem(var(--border-radius-l));
   overflow: hidden;
+  width: max-content;
 }
