@@ -1,4 +1,5 @@
 import LangSwitchComp from './LangSwitch.jsx';
+import * as dropdownItems from '../DropdownList/DropdownList.stories.jsx';
 
 export default {
   argTypes: {
@@ -19,28 +20,7 @@ export default {
 
 export const LangSwitch = {
   args: {
-    items: [
-      {
-        icon: 'de',
-        label: 'Deutsch',
-        link: '#',
-      },
-      {
-        icon: 'en',
-        label: 'English',
-        link: '#',
-      },
-      {
-        icon: 'fr',
-        label: 'Francais',
-        link: '#',
-      },
-      {
-        icon: 'it',
-        label: 'Italiano',
-        link: '#',
-      },
-    ],
+    items: dropdownItems.DropdownList.args.items,
     lang: 'de',
   },
 };
