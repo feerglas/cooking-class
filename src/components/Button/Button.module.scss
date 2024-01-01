@@ -87,6 +87,7 @@
   padding: fn.to-rem(var(--button-padding-v)) fn.to-rem(var(--button-padding-h));
   color: var(--button-text-color);
   background-color: var(--button-background-color);
+  width: max-content;
 
   @include mx.default-transition;
   transition-property: color, background-color;
@@ -102,6 +103,7 @@
 
   &__icon-after {
     width: fn.to-rem(var(--size-m));
+    flex: 0 0 fn.to-rem(var(--size-m));
 
     & * {
       fill: currentcolor;

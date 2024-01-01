@@ -5,6 +5,7 @@ import {
 import AutocompleteList from '../AutocompleteList/AutocompleteList';
 import Input from '../Input/Input';
 import styles from './Autocomplete.module.scss';
+import { selected } from '../Dropdown/Dropdown.state';
 
 export default function Autocomplete(props) {
   const [
@@ -17,8 +18,23 @@ export default function Autocomplete(props) {
     setShowList,
   ] = createSignal(false);
 
+  const [
+    searchInput,
+    setSearchInput,
+  ] = createSignal('');
+
   createEffect(() => {
-    setItems(props.items);
+
+    let _items = props.items;
+
+    // filter by category
+    if (selected().value !== 'all') {
+      _items = props.items.filter((item) => item.categoryId === selected().value);
+    }
+
+    // filter by search
+
+    setItems(_items);
   });
 
   return (
@@ -40,10 +56,7 @@ export default function Autocomplete(props) {
           setShowList(false);
         }}
         input={(value) => {
-          console.log(value);
-        }}
-        filterChange={(value) => {
-          console.log(value);
+          setSearchInput(value);
         }}
       />
 

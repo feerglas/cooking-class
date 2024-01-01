@@ -2,6 +2,7 @@ import { Dynamic } from 'solid-js/web';
 import styles from './DropdownItem.module.scss';
 import Icon from '../Icon/Icon';
 import Radio from '../Radio/Radio';
+import { setSelected } from '../Dropdown/Dropdown.state';
 
 export default function DropdownItem(props) {
   return (
@@ -16,17 +17,6 @@ export default function DropdownItem(props) {
         }
         class={styles.link}
         href={props.link || undefined}
-        onClick={(evt) => {
-          evt.preventDefault();
-
-          if (props.click) {
-            if (props.radio) {
-              props.click(props.radio.value);
-            } else {
-              props.click();
-            }
-          }
-        }}
       >
         {props.link && props.icon &&
           <Icon
@@ -45,6 +35,12 @@ export default function DropdownItem(props) {
           <Radio
             classes={styles['radio']}
             {...props.radio}
+            change={() => {
+              setSelected(props.radio);
+              if (props.click) {
+                props.click(props.radio.value);
+              }
+            }}
           />
         }
       </Dynamic>

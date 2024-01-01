@@ -22,10 +22,10 @@ export const Radios = {
       {
         radio: {
           ...itemArgs.Radio.args.radio,
-          checked: false,
-          id: 'radio-id-0',
+          checked: true,
+          id: 'all',
           label: 'radio cat all',
-          value: 'radio-id-0',
+          value: 'all',
         },
       },
       {

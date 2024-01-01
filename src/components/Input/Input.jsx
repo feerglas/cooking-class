@@ -26,11 +26,6 @@ export default function Input(props) {
       {props.dropdown &&
         <Dropdown
           {...props.dropdown}
-          filterChange={(val) => {
-            if (props.filterChange) {
-              props.filterChange(val);
-            }
-          }}
         />
       }
 
