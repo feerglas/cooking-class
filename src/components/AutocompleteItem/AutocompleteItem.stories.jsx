@@ -61,7 +61,7 @@ export const With3Pills = {
   args: {
     categoryId: 'radio-id-1',
     click: false,
-    id: '5',
+    id: '6',
     pills: [
       pillArgs.Pill.args,
       pillArgs.Pill.args,

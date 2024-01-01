@@ -9,7 +9,15 @@ export default function AutocompleteList(props) {
       classList={props.classList || undefined}
     >
       <For each={props.items}>
-        {(item) => <AutocompleteItem {...item} />}
+        {(item) => <AutocompleteItem
+          {...item}
+          click={(elem) => {
+            if (props.click) {
+              props.click(elem);
+            }
+          }}
+        />
+        }
       </For>
     </ul>
   );

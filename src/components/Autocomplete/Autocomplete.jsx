@@ -28,8 +28,22 @@ export default function Autocomplete(props) {
         focus={() => {
           setShowList(true);
         }}
-        blur={() => {
+        blur={(evt) => {
+          if (evt.relatedTarget) {
+            const attr = evt.relatedTarget.getAttribute('data-autocomplete-item');
+
+            if (attr && attr === 'button') {
+              return;
+            }
+          }
+
           setShowList(false);
+        }}
+        input={(value) => {
+          console.log(value);
+        }}
+        filterChange={(value) => {
+          console.log(value);
         }}
       />
 
@@ -39,6 +53,10 @@ export default function Autocomplete(props) {
           [styles['autocomplete__list--visible']]: showList(),
         }}
         items={items()}
+        click={(value) => {
+          console.log('click', value);
+          setShowList(false);
+        }}
       />
     </div>
   );

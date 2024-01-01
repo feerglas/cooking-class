@@ -2,7 +2,7 @@ import styles from './Radio.module.scss';
 
 export default function Radio(props) {
   return (
-    <div class={`${styles.radio} ${props.classes}`}>
+    <div class={`${styles.radio} ${props.classes || undefined}`}>
       <input
         type='radio'
         id={props.id}

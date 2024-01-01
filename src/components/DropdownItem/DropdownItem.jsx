@@ -16,9 +16,15 @@ export default function DropdownItem(props) {
         }
         class={styles.link}
         href={props.link || undefined}
-        onClick={() => {
-          if (props.click && !props.radio) {
-            props.click();
+        onClick={(evt) => {
+          evt.preventDefault();
+
+          if (props.click) {
+            if (props.radio) {
+              props.click(props.radio.value);
+            } else {
+              props.click();
+            }
           }
         }}
       >

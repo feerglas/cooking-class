@@ -8,9 +8,7 @@ export default function Section(props) {
       class={`
         ${styles.heading}
         ${styles[`heading--level-${props.visualLevel || props.level}`]}
-        ${props.classes
-      ? props.classes
-      : ''}
+        ${props.classes || undefined}
       `}
     >
       {props.text}

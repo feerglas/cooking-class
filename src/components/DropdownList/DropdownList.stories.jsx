@@ -23,8 +23,18 @@ export const Radios = {
         radio: {
           ...itemArgs.Radio.args.radio,
           checked: false,
+          id: 'radio-id-0',
+          label: 'radio cat all',
+          value: 'radio-id-0',
+        },
+      },
+      {
+        radio: {
+          ...itemArgs.Radio.args.radio,
+          checked: false,
           id: 'radio-id-1',
           label: 'radio cat 1',
+          value: 'radio-id-1',
         },
       },
       {
@@ -33,6 +43,7 @@ export const Radios = {
           checked: false,
           id: 'radio-id-2',
           label: 'radio cat 2',
+          value: 'radio-id-2',
         },
       },
     ],

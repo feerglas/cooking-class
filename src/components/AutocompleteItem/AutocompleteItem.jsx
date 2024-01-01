@@ -6,10 +6,11 @@ import Pill from '../Pill/Pill';
 export default function AutocompleteItem(props) {
   return (
     <li
-      class={`${styles['autocomplete-item']} ${props.classes}`}
+      class={`${styles['autocomplete-item']} ${props.classes || undefined}`}
     >
       <button
         class={styles['autocomplete-item__button']}
+        data-autocomplete-item='button'
         onClick={() => {
           if (props.click) {
             props.click(props.id);

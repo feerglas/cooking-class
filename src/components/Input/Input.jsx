@@ -26,6 +26,11 @@ export default function Input(props) {
       {props.dropdown &&
         <Dropdown
           {...props.dropdown}
+          filterChange={(val) => {
+            if (props.filterChange) {
+              props.filterChange(val);
+            }
+          }}
         />
       }
 
@@ -45,15 +50,18 @@ export default function Input(props) {
         onInput={(evt) => {
           setInputValue(evt.currentTarget.value);
           setShowClearButton(evt.srcElement.value.length > 0);
-        }}
-        onFocus={() => {
-          if (props.focus) {
-            props.focus();
+          if (props.input) {
+            props.input(evt.currentTarget.value);
           }
         }}
-        onBlur={() => {
+        onFocus={(evt) => {
+          if (props.focus) {
+            props.focus(evt);
+          }
+        }}
+        onBlur={(evt) => {
           if (props.blur) {
-            props.blur();
+            props.blur(evt);
           }
         }}
         value={inputValue()}
@@ -69,6 +77,9 @@ export default function Input(props) {
             setShowClearButton(false);
             setInputValue('');
             inputRef.focus();
+            if (props.input) {
+              props.input('');
+            }
           }}
         >
           <Icon name='close' class={styles['input__button-icon']} />

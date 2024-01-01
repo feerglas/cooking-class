@@ -10,7 +10,7 @@ export default function LangSwitch(props) {
   ] = createSignal(false);
 
   return (
-    <div class={`${styles['dropdown']} ${props.classes}`}>
+    <div class={`${styles['dropdown']} ${props.classes || undefined}`}>
       <Button
         {...props.button}
         click={() => {
@@ -22,7 +22,10 @@ export default function LangSwitch(props) {
           ? styles['dropdown__list']
           : styles['dropdown__list--hidden']}
         items={props.items}
-        click={() => {
+        click={(evt) => {
+          if (props.filterChange) {
+            props.filterChange(evt);
+          }
           setDropdownVisible(!dropdownVisible());
         }}
       />
