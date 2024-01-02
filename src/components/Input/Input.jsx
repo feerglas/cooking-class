@@ -1,7 +1,11 @@
-import { createSignal } from 'solid-js';
+import {
+  createEffect,
+  createSignal,
+} from 'solid-js';
 import Icon from '../Icon/Icon';
 import Dropdown from '../Dropdown/Dropdown';
 import styles from './Input.module.scss';
+import { selected } from '../Dropdown/Dropdown.state';
 
 export default function Input(props) {
   const [
@@ -15,6 +19,13 @@ export default function Input(props) {
   ] = createSignal(false);
 
   let inputRef;
+
+  createEffect(() => {
+    if (selected()) {
+      setInputValue('');
+      setShowClearButton(false);
+    }
+  });
 
   return (
     <div classList={{
@@ -32,6 +43,7 @@ export default function Input(props) {
       {props.label &&
         <label for={props.id}>{props.label}</label>
       }
+
       <input
         ref={inputRef}
         id={props.id}
@@ -59,7 +71,7 @@ export default function Input(props) {
             props.blur(evt);
           }
         }}
-        value={inputValue()}
+        value={props.value || inputValue()}
       />
 
       {props.closeButton &&

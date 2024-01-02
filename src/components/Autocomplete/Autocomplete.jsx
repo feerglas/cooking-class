@@ -33,6 +33,13 @@ export default function Autocomplete(props) {
     }
 
     // filter by search
+    _items = _items.filter((item) => {
+      const itemLowercase = item.text.toLowerCase();
+      const searchLowercase = searchInput()
+        .toLowerCase();
+
+      return itemLowercase.indexOf(searchLowercase) !== -1;
+    });
 
     setItems(_items);
   });
