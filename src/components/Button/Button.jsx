@@ -12,9 +12,14 @@ export default function Button(props) {
         [styles['button--no-right-radius']]: props.noRightBorderRadius,
         [props.classes]: props.classes,
       }}
-      onClick={() => {
+      onClick={(evt) => {
         if (props.click) {
-          props.click();
+          props.click(evt);
+        }
+      }}
+      onBlur={(evt) => {
+        if (props.blur) {
+          props.blur(evt);
         }
       }}
     >

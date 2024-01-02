@@ -3,7 +3,27 @@
 .dropdown {
   position: relative;
 
+  &__backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+
+    &--visible {
+      display: block;
+    }
+  }
+
+  &__button {
+    position: relative;
+    z-index: 2;
+  }
+
   &__list {
+    z-index: 3;
     position: absolute;
     display: inline-block;
     top: calc(100% + fn.to-rem(var(--spacing-m)));

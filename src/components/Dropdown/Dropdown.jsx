@@ -12,8 +12,18 @@ export default function LangSwitch(props) {
 
   return (
     <div class={`${styles['dropdown']} ${props.classes || undefined}`}>
+      <button
+        classList={{
+          [styles['dropdown__backdrop']]: true,
+          [styles['dropdown__backdrop--visible']]: dropdownVisible(),
+        }}
+        onClick={() => {
+          setDropdownVisible(false);
+        }}
+      />
       <Button
         {...props.button}
+        classes={styles['dropdown__button']}
         label={selected().label}
         click={() => {
           setDropdownVisible(!dropdownVisible());
