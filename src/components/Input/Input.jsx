@@ -24,6 +24,9 @@ export default function Input(props) {
     if (selected()) {
       setInputValue('');
       setShowClearButton(false);
+      if (props.input) {
+        props.input('');
+      }
     }
   });
 
