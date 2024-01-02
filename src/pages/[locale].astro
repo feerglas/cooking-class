@@ -8,10 +8,11 @@ import {
 } from '../i18n/utils';
 import Autocomplete from '../components/Autocomplete/Autocomplete';
 import LanguagePicker from '../components/Dropdown/Dropdown';
+import events from '../events/events';
 
 import { ingredientsData } from '../data/ingredients';
 import { prepareIngredientsForAutocomplete } from '../data/dataHelper';
-// import Badge from '../components/Badge/Badge.astro';
+import componentsData from '../data/componentsData';
 
 export const getStaticPaths = getStaticPathsForPage;
 
@@ -46,6 +47,7 @@ const langItems = Object.entries(languages)
         size: 's',
       }}
       items={langItems}
+      radios={false}
     />
 
     <Autocomplete
@@ -53,68 +55,26 @@ const langItems = Object.entries(languages)
       input={{
         closeButton: true,
         dropdown: {
-          button: {
-            click: false,
-            color: 'gray',
-            iconAfter: 'arrowDown',
-            iconBefore: false,
-            label: 'Alle',
-            noRightBorderRadius: true,
-            size: 'l',
-          },
-          items: [
-            {
-              radio: {
-                checked: true,
-                id: 'all',
-                label: 'Alle',
-                name: 'radio-name',
-                value: 'all',
-              },
-            },
-            {
-              radio: {
-                checked: false,
-                id: 'radio-id-1',
-                label: 'Vegetables',
-                name: 'radio-name',
-                value: 'vegetables',
-              },
-            },
-            {
-              radio: {
-                checked: false,
-                id: 'radio-id-2',
-                label: 'Fruits',
-                name: 'radio-name',
-                value: 'fruits',
-              },
-            },
-            {
-              radio: {
-                checked: false,
-                id: 'radio-id-3',
-                label: 'Herbs',
-                name: 'radio-name',
-                value: 'herbs',
-              },
-            },
-          ],
+          ...componentsData.ingredientsAutocompleteInputDropdown,
         },
-        id: 'input-id',
+        id: 'ingredients-input',
         label: false,
         placeholder: 'Zutaten durchsuchen',
       }}
       items={ingredients}
     />
 
-    <!--
-    <div class="foo">
-      {ingredients.map((ingredient) => (
-        <p>{ingredient[lang]}</p>
-      ))}
-    </div>
-    -->
     <!-- <p>new localized index {t('nav.foo')}</p> -->
   </main>
 </Layout>
+
+<script define:vars={{
+  events,
+}}>
+
+  /* eslint-disable no-undef */
+  window.addEventListener(events.autocomplete.ingredientSelected, (evt) => {
+    console.log(evt.detail);
+  });
+  /* eslint-enable no-undef */
+</script>

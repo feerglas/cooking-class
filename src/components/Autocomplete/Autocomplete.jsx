@@ -6,6 +6,7 @@ import AutocompleteList from '../AutocompleteList/AutocompleteList';
 import Input from '../Input/Input';
 import styles from './Autocomplete.module.scss';
 import { selected } from '../Dropdown/Dropdown.state';
+import events from '../../events/events';
 
 export default function Autocomplete(props) {
   const [
@@ -87,8 +88,13 @@ export default function Autocomplete(props) {
         }}
         items={items()}
         click={(value) => {
-          console.log('click', value);
           setShowList(false);
+
+          const event = new CustomEvent(events.autocomplete.ingredientSelected, {
+            detail: value,
+          });
+
+          window.dispatchEvent(event);
         }}
       />
     </div>

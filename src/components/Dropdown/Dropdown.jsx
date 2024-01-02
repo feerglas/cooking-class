@@ -24,7 +24,10 @@ export default function LangSwitch(props) {
       <Button
         {...props.button}
         classes={styles['dropdown__button']}
-        label={selected().label}
+        label={props.radios
+          ? selected().label
+          : props.label
+        }
         click={() => {
           setDropdownVisible(!dropdownVisible());
         }}

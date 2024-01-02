@@ -10,6 +10,7 @@ export const Autocomplete = {
   args: {
     input: inputArgs.WithFilter.args,
     items: listArgs.AutocompleteList.args.items,
+    radios: true,
   },
 };
 

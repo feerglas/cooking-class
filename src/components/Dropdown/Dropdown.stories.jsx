@@ -10,6 +10,7 @@ export const Links = {
   args: {
     button: buttonArgs.IconAfter.args,
     items: dropdownItems.Links.args.items,
+    radios: false,
   },
 };
 
@@ -17,5 +18,6 @@ export const Radios = {
   args: {
     button: buttonArgs.IconAfter.args,
     items: dropdownItems.Radios.args.items,
+    radios: true,
   },
 };
