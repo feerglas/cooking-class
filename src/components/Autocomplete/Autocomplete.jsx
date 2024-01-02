@@ -32,16 +32,29 @@ export default function Autocomplete(props) {
       _items = props.items.filter((item) => item.categoryId === selected().value);
     }
 
-    // filter by search
-    _items = _items.filter((item) => {
+    // filter by search and highlight search term in results
+    const results = [];
+
+    _items.forEach((item) => {
       const itemLowercase = item.text.toLowerCase();
       const searchLowercase = searchInput()
         .toLowerCase();
+      const searchIndex = itemLowercase.indexOf(searchLowercase);
 
-      return itemLowercase.indexOf(searchLowercase) !== -1;
+      if (searchIndex !== -1) {
+        const tempItem = JSON.parse(JSON.stringify(item));
+
+        const preString = tempItem.text.substring(0, searchIndex);
+        const main = tempItem.text.substring(searchIndex, searchIndex + searchLowercase.length);
+        const postString = tempItem.text.substring(searchIndex + searchLowercase.length);
+
+        tempItem.text = `${preString}<b>${main}</b>${postString}`;
+
+        results.push(tempItem);
+      }
     });
 
-    setItems(_items);
+    setItems(results);
   });
 
   return (
