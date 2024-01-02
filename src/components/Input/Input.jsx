@@ -45,6 +45,7 @@ export default function Input(props) {
       }
 
       <input
+        autocomplete='off'
         ref={inputRef}
         id={props.id}
         name={props.id}
