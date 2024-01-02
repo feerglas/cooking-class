@@ -4,7 +4,7 @@ export const ingredientCategories = {
   vegetables: 'vegetables',
 };
 
-export const sortArrayOfObjects = (array, sortKey) => {
+const sortArrayOfObjects = (array, sortKey) => {
   const sortedData = array.sort((a, b) => {
     const x = a[sortKey].toLowerCase();
     const y = b[sortKey].toLowerCase();
@@ -23,4 +23,23 @@ export const sortArrayOfObjects = (array, sortKey) => {
   return sortedData;
 };
 
-export const filterArrayOfObjects = (array, key, value) => array.filter((item) => item[key] === value);
+export const prepareIngredientsForAutocomplete = (items, lang) => {
+  const sorted = sortArrayOfObjects(items, lang);
+
+  const values = sorted.map((item) => ({
+    categoryId: item.category,
+    id: item.id,
+    pills: [
+      {
+        color: 'primary',
+        label: item.category,
+        size: 's',
+      },
+    ],
+    text: item[lang],
+  }));
+
+  console.log(values);
+
+  return values;
+};
