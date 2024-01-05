@@ -39,7 +39,5 @@ export const prepareIngredientsForAutocomplete = (items, lang) => {
     text: item[lang],
   }));
 
-  console.log(values);
-
   return values;
 };
