@@ -8,7 +8,6 @@ import {
 } from '../i18n/utils';
 import Autocomplete from '../components/Autocomplete/Autocomplete';
 import LanguagePicker from '../components/Dropdown/Dropdown';
-import events from '../events/events';
 
 import { ingredientsData } from '../data/ingredients';
 import { prepareIngredientsForAutocomplete } from '../data/dataHelper';
@@ -67,14 +66,3 @@ const langItems = Object.entries(languages)
     <!-- <p>new localized index {t('nav.foo')}</p> -->
   </main>
 </Layout>
-
-<script define:vars={{
-  events,
-}}>
-
-  /* eslint-disable no-undef */
-  window.addEventListener(events.autocomplete.ingredientSelected, (evt) => {
-    console.log(evt.detail);
-  });
-  /* eslint-enable no-undef */
-</script>
