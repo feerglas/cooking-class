@@ -117,6 +117,7 @@
   &__icon {
     display: block;
     height: fn.to-rem(var(--pill-icon-size));
+    pointer-events: none;
   }
 
   &--button {
@@ -141,5 +142,9 @@
         background-color: var(--color-gray-600);
       }
     }
+  }
+
+  &__label {
+    pointer-events: none;
   }
 }

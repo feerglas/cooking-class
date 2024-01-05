@@ -16,6 +16,12 @@ export default function Pill(props) {
         [styles[`pill--size-${props.size}`]]: props.size,
         [styles[`pill--color-${props.color}`]]: props.color,
       }}
+      onClick={(evt) => {
+        if (props.click) {
+          props.click(evt);
+        }
+      }}
+      data-pill-id={props.id}
     >
       {props.iconBefore &&
         <Icon
@@ -24,7 +30,7 @@ export default function Pill(props) {
         />
       }
 
-      <span>{props.label}</span>
+      <span class={styles['pill__label']}>{props.label}</span>
 
       {props.iconAfter &&
         <Icon

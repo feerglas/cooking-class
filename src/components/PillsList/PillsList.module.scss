@@ -1,0 +1,16 @@
+@use '/src/styles/functions' as fn;
+// @use '/src/styles/mixins' as mx;
+// @use '/src/styles/mediaqueries' as mq;
+
+/*
+:root {
+  --pill-border-radius: var(--border-radius-m);
+  --pill-padding-v: var(--spacing-xxxs);
+}
+*/
+
+.pills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: fn.to-rem(var(--spacing-2s));
+}

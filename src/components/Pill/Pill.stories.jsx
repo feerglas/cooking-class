@@ -56,7 +56,22 @@ export const Pill = {
   args: {
     click: false,
     color: 'primary',
+    iconAfter: false,
+    iconBefore: false,
+    id: '1',
     label: 'Pill',
+    size: 'l',
+  },
+};
+
+export const Ingredient = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: 'close',
+    iconBefore: false,
+    id: '1',
+    label: 'Some ingredient',
     size: 'l',
   },
 };
