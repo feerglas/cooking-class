@@ -2,6 +2,14 @@
 @use '/src/styles/mediaqueries' as mq;
 @use '/src/styles/mixins' as mx;
 
+:root {
+  --add-bar-line-color: var(--color-gray-300);
+
+  @include mq.color-scheme-dark {
+    --add-bar-line-color: var(--color-gray-700);
+  }
+}
+
 .add-bar {
   $root: &;
   cursor: pointer;
@@ -16,7 +24,7 @@
     position: absolute;
     z-index: 0;
     inset: calc(50% - fn.to-rem(1)) 0;
-    color: var(--color-blue-700);
+    color: var(--add-bar-line-color);
 
     @include mx.default-transition;
     transition-property: color;
