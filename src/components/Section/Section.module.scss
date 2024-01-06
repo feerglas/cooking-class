@@ -15,12 +15,16 @@
 }
 
 .section {
-  border-radius: fn.to-rem(var(--border-radius-l));
-  overflow: hidden;
-  border: fn.to-rem(1) solid var(--section-border-color);
+  overflow: visible;
   box-shadow: var(--section-box-shadow);
+  border-radius: fn.to-rem(var(--border-radius-l));
 
   &__header {
+    border-top-left-radius: fn.to-rem(var(--border-radius-l));
+    border-top-right-radius: fn.to-rem(var(--border-radius-l));
+    border-top: fn.to-rem(1) solid var(--section-border-color);
+    border-left: fn.to-rem(1) solid var(--section-border-color);
+    border-right: fn.to-rem(1) solid var(--section-border-color);
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
@@ -44,5 +48,10 @@
   &__content {
     background-color: var(--section-content-background);
     padding: fn.to-rem(var(--spacing-l));
+    border-bottom-left-radius: fn.to-rem(var(--border-radius-l));
+    border-bottom-right-radius: fn.to-rem(var(--border-radius-l));
+    border-bottom: fn.to-rem(1) solid var(--section-border-color);
+    border-left: fn.to-rem(1) solid var(--section-border-color);
+    border-right: fn.to-rem(1) solid var(--section-border-color);
   }
 }
