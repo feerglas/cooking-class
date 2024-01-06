@@ -4,7 +4,7 @@ import styles from './Section.module.scss';
 
 export default function Section(props) {
   return (
-    <div class={styles.section}>
+    <div class={`${styles.section} ${props.classes}`}>
 
       <div class={styles['section__header']}>
 
