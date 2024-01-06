@@ -58,7 +58,7 @@ export default function Autocomplete(props) {
   });
 
   return (
-    <div class={styles['autocomplete']}>
+    <div class={`${styles['autocomplete']} ${props.classes || undefined}`}>
       <Input
         {...props.input}
         focus={() => {
@@ -88,7 +88,10 @@ export default function Autocomplete(props) {
         items={items()}
         click={(value) => {
           setShowList(false);
-          console.log(value);
+
+          if (props.selected) {
+            props.selected(value);
+          }
         }}
       />
     </div>
