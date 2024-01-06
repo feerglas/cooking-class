@@ -1,16 +1,22 @@
 @use '/src/styles/functions' as fn;
-// @use '/src/styles/mixins' as mx;
-// @use '/src/styles/mediaqueries' as mq;
+@use '/src/styles/mediaqueries' as mq;
 
-/*
 :root {
-  --pill-border-radius: var(--border-radius-m);
-  --pill-padding-v: var(--spacing-xxxs);
+  --pills-list-border-color: var(--color-gray-300);
+  --pills-list-background-color: var(--color-white);
+
+  @include mq.color-scheme-dark {
+    --pills-list-border-color: var(--color-gray-700);
+    --pills-list-background-color: var(--color-gray-800);
+  }
 }
-*/
 
 .pills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: fn.to-rem(var(--spacing-2s));
+  gap: fn.to-rem(var(--spacing-s));
+  padding: fn.to-rem(var(--spacing-2s));
+  background-color: var(--pills-list-background-color);
+  border-radius: fn.to-rem(var(--border-radius-l));
+  border: fn.to-rem(1) solid var(--pills-list-border-color)
 }

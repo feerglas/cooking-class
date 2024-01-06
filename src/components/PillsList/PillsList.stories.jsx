@@ -5,6 +5,13 @@ export default {
   component: PillsListComp,
 };
 
+export const EmptyList = {
+  args: {
+    pills: [],
+    placeholder: 'Füge 2 bis 5 Zutaten hinzu',
+  },
+};
+
 export const PillsList = {
   args: {
     pills: [
@@ -34,5 +41,6 @@ export const PillsList = {
         label: 'Some ingredient 5',
       },
     ],
+    placeholder: 'Füge 2 bis 5 Zutaten hinzu',
   },
 };
