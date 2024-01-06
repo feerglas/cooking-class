@@ -1,0 +1,81 @@
+@use '/src/styles/functions' as fn;
+@use '/src/styles/mediaqueries' as mq;
+@use '/src/styles/mixins' as mx;
+
+.add-bar {
+  $root: &;
+  cursor: pointer;
+  position: relative;
+  padding: fn.to-rem(var(--spacing-xs)) 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__line {
+    position: absolute;
+    z-index: 0;
+    inset: calc(50% - fn.to-rem(1)) 0;
+    color: var(--color-blue-700);
+
+    @include mx.default-transition;
+    transition-property: color;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background-color: currentcolor;
+    }
+
+    &::before {
+      right: calc(50% + fn.to-rem(var(--size-xl)) / 2 + fn.to-rem(var(--spacing-xxs)));
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+      left: calc(50% + fn.to-rem(var(--size-xl)) / 2 + fn.to-rem(var(--spacing-xxs)));
+    }
+  }
+
+  &__icon {
+    z-index: 1;
+    background-color: var(--color-blue-700);
+    width: fn.to-rem(var(--size-xl));
+    height: fn.to-rem(var(--size-xl));
+    margin: fn.to-rem(var(--spacing-xxs));
+    border-radius: 50%;
+
+    @include mx.default-transition;
+    transition-property: background-color;
+
+    & svg {
+      stroke: var(--color-white);
+    }
+  }
+
+  &:hover {
+    @include mq.mouse-only {
+      #{$root}__icon {
+        background-color: var(--color-blue-800);
+      }
+
+      #{$root}__line {
+        color: var(--color-blue-800);
+      }
+    }
+  }
+
+  &:focus {
+    #{$root}__icon {
+      background-color: var(--color-blue-800);
+    }
+
+    #{$root}__line {
+      color: var(--color-blue-800);
+    }
+  }
+}
