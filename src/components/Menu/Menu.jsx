@@ -47,18 +47,20 @@ export default function Menu(props) {
 
       <For each={courses()}>
         {(course, index) => (
-          <div attr:data-section-number={index() + 1}>
-            <MenuCourse
-              {...course}
-              index={index() + 1}
-              click={() => {
-                removeCourseAtIndex(index());
-              }}
-            />
+          <>
+            <div attr:data-section-number={index() + 1}>
+              <MenuCourse
+                {...course}
+                index={index() + 1}
+                click={() => {
+                  removeCourseAtIndex(index());
+                }}
+              />
+            </div>
             <AddBar click={() => {
               addCourseAtIndex(index() + 1);
             }} />
-          </div>
+          </>
         )}
       </For>
 
