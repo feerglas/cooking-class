@@ -1,0 +1,3 @@
+- add seasonality to ingredients
+- translations
+- keyboard support for autocomplete
