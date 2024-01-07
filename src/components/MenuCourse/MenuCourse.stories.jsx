@@ -13,6 +13,7 @@ export const MenuCourse = {
       color: 'red',
       iconAfter: 'trash',
       label: 'Löschen',
+      outline: true,
       size: 's',
     },
     heading: {

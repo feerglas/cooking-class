@@ -10,6 +10,7 @@ export default function Button(props) {
         [styles[`button--size-${props.size}`]]: props.size,
         [styles[`button--color-${props.color}`]]: props.color,
         [styles['button--no-right-radius']]: props.noRightBorderRadius,
+        [styles['button--outline']]: props.outline,
         [props.classes]: props.classes,
       }}
       onClick={(evt) => {

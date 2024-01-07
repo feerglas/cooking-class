@@ -16,21 +16,49 @@
   .button--color-primary {
     --button-background-color: var(--color-blue-700);
     --button-background-color-hover: var(--color-blue-800);
+
+    &.button--outline {
+      --button-background-color: var(--color-white);
+      --button-text-color: var(--color-blue-700);
+      --button-border-color: var(--color-blue-700);
+      --button-border-color-hover: var(--color-blue-800);
+    }
   }
 
   .button--color-red {
     --button-background-color: var(--color-red-700);
     --button-background-color-hover: var(--color-red-800);
+
+    &.button--outline {
+      --button-background-color: var(--color-white);
+      --button-text-color: var(--color-red-700);
+      --button-border-color: var(--color-red-700);
+      --button-border-color-hover: var(--color-red-800);
+    }
   }
 
   .button--color-green {
     --button-background-color: var(--color-green-700);
     --button-background-color-hover: var(--color-green-800);
+
+    &.button--outline {
+      --button-background-color: var(--color-white);
+      --button-text-color: var(--color-green-700);
+      --button-border-color: var(--color-green-700);
+      --button-border-color-hover: var(--color-green-800);
+    }
   }
 
   .button--color-black {
     --button-background-color: var(--color-gray-700);
     --button-background-color-hover: var(--color-gray-800);
+
+    &.button--outline {
+      --button-background-color: var(--color-white);
+      --button-text-color: var(--color-gray-700);
+      --button-border-color: var(--color-gray-700);
+      --button-border-color-hover: var(--color-gray-800);
+    }
   }
 
   .button--color-gray {
@@ -38,6 +66,13 @@
     --button-background-color-hover: var(--color-gray-300);
     --button-text-color: var(--color-gray-800);
     --button-text-color-hover: var(--color-gray-800);
+
+    &.button--outline {
+      --button-background-color: var(--color-white);
+      --button-text-color: var(--color-gray-800);
+      --button-border-color: var(--color-gray-200);
+      --button-border-color-hover: var(--color-gray-300);
+    }
   }
 
   @include mq.color-scheme-dark {
@@ -92,6 +127,11 @@
   @include mx.default-transition;
   transition-property: color, background-color;
 
+  &--outline {
+    border: fn.to-rem(1) solid var(--button-border-color);
+    transition-property: color, background-color, border-color;
+  }
+
   &__label {
     display: block;
     flex: 1 0 auto;
@@ -126,11 +166,13 @@
     @include mq.mouse-only {
       background-color: var(--button-background-color-hover);
       color: var(--button-text-color-hover);
+      border-color: var(--button-border-color-hover);
     }
   }
 
   &:focus {
     background-color: var(--button-background-color-hover);
     color: var(--button-text-color-hover);
+    border-color: var(--button-border-color-hover);
   }
 }

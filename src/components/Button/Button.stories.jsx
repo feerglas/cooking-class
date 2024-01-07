@@ -56,6 +56,7 @@ export const Button = {
     iconAfter: false,
     iconBefore: false,
     label: 'Button',
+    outline: false,
     size: 's',
   },
 };
@@ -67,6 +68,7 @@ export const IconBefore = {
     iconAfter: false,
     iconBefore: 'en',
     label: 'Button',
+    outline: false,
     size: 's',
   },
 };
@@ -78,6 +80,7 @@ export const IconAfter = {
     iconAfter: 'arrowDown',
     iconBefore: false,
     label: 'Button',
+    outline: false,
     size: 's',
   },
 };
@@ -89,6 +92,7 @@ export const BothIcons = {
     iconAfter: 'arrowDown',
     iconBefore: 'en',
     label: 'Button',
+    outline: false,
     size: 's',
   },
 };
@@ -100,6 +104,7 @@ export const IconOnly = {
     iconAfter: false,
     iconBefore: 'en',
     label: false,
+    outline: false,
     size: 's',
   },
 };
@@ -112,7 +117,19 @@ export const NoRightBorderRadius = {
     iconBefore: false,
     label: 'Button',
     noRightBorderRadius: true,
+    outline: false,
     size: 's',
   },
 };
 
+export const Outline = {
+  args: {
+    click: false,
+    color: 'primary',
+    iconAfter: 'arrowDown',
+    iconBefore: false,
+    label: 'Button',
+    outline: true,
+    size: 's',
+  },
+};
