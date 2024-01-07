@@ -24,6 +24,16 @@ export default {
 
 export const Heading = {
   args: {
+    editable: false,
+    level: 1,
+    text: 'Heading text',
+    visualLevel: false,
+  },
+};
+
+export const HeadingEditable = {
+  args: {
+    editable: true,
     level: 1,
     text: 'Heading text',
     visualLevel: false,
