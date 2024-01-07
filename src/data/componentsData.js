@@ -1,4 +1,4 @@
-const ingredientsAutocompleteInputDropdown = {
+const categoryDropdown = {
   button: {
     click: false,
     color: 'gray',
@@ -49,31 +49,35 @@ const ingredientsAutocompleteInputDropdown = {
   radios: true,
 };
 
+const sectionButton = {
+  color: 'red',
+  iconAfter: 'trash',
+  iconBefore: false,
+  label: 'Löschen',
+  outline: true,
+  size: 's',
+};
+
+const sectionHeading = {
+  editable: true,
+  level: '2',
+  text: 'Gib dem Gang einen Namen',
+  visualLevel: '4',
+};
+
 export default {
   menuCourse: {
-    button: {
-      color: 'red',
-      iconAfter: 'trash',
-      iconBefore: false,
-      label: 'Löschen',
-      outline: true,
-      size: 's',
-    },
-    heading: {
-      editable: true,
-      level: '2',
-      text: 'Apéro',
-      visualLevel: '4',
-    },
+    button: sectionButton,
+    heading: sectionHeading,
     index: '1',
     ingredientsSelector: {
       headingIngredients: 'Deine Zutaten',
       headingIngredientsList: 'Zutaten suchen',
-      // ingredients,
+      // ingredients --> set after importing this object
       input: {
         closeButton: true,
         dropdown: {
-          ...ingredientsAutocompleteInputDropdown,
+          ...categoryDropdown,
         },
         id: 'ingredients-input',
         label: false,
