@@ -47,7 +47,7 @@ export default function Menu(props) {
 
       <For each={courses()}>
         {(course, index) => (
-          <div>
+          <div attr:data-section-number={index() + 1}>
             <MenuCourse
               {...course}
               index={index() + 1}

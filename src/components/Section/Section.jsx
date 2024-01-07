@@ -1,10 +1,26 @@
+import {
+  createEffect,
+  createSignal,
+} from 'solid-js';
 import Heading from '../Heading/Heading';
 import Button from '../Button/Button';
 import styles from './Section.module.scss';
 
 export default function Section(props) {
+  const [
+    title,
+    setTitel,
+  ] = createSignal();
+
+  createEffect(() => {
+    setTitel(props.heading.text);
+  });
+
   return (
-    <div class={`${styles.section} ${props.classes}`}>
+    <div
+      class={`${styles.section} ${props.classes}`}
+      attr:data-section-title={title()}
+    >
 
       <div class={styles['section__header']}>
 
@@ -17,6 +33,9 @@ export default function Section(props) {
         <Heading
           {...props.heading}
           classes={styles['section__heading']}
+          change={(val) => {
+            setTitel(val);
+          }}
         />
 
         {props.button &&

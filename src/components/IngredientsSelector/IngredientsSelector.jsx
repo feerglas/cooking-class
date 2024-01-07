@@ -52,7 +52,7 @@ export default function IngredientsSelector(props) {
   });
 
   return (
-    <>
+    <div attr:data-ingredients={ingredientIds()}>
 
       <Heading
         level='3'
@@ -95,7 +95,7 @@ export default function IngredientsSelector(props) {
           setIngredientIds(selected);
         }}
       />
-    </>
+    </div>
   );
 }
 
