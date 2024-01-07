@@ -1,3 +1,5 @@
 - add seasonality to ingredients
 - translations
 - keyboard support for autocomplete
+- a11y issues: button name, input label, ul with no li
+- section heading: ellipsis
