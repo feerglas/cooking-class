@@ -4,11 +4,11 @@
 
 :root {
   --heading-color: var(--color-gray-900);
-  --heading-input-border-color: var(--color-gray-300);
+  --heading-input-border-color: var(--color-white);
 
   @include mq.color-scheme-dark {
     --heading-color: var(--color-white);
-    --heading-input-border-color: var(--color-gray-700);
+    --heading-input-border-color: var(--color-gray-200);
   }
 }
 
@@ -18,22 +18,8 @@
   line-height: 100%;
   font-weight: bold;
 
-  &__input-wrapper {
-    display: flex;
-    align-items: center;
-    gap: fn.to-rem(var(--spacing-2s));
-  }
-
-  &__icon {
-    width: fn.to-rem(var(--size-xl));
-    height: fn.to-rem(var(--size-xl));
-
-    & svg * {
-      fill: currentcolor;
-    }
-  }
-
   &__input {
+    width: 100%;
     font-weight: bold;
     border: fn.to-rem(1) solid transparent;
     border-radius: fn.to-rem(var(--border-radius-l));
