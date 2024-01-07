@@ -4,7 +4,7 @@
 
 :root {
   --heading-color: var(--color-gray-900);
-  --heading-input-border-color: var(--color-white);
+  --heading-input-border-color: var(--color-gray-700);
 
   @include mq.color-scheme-dark {
     --heading-color: var(--color-white);
