@@ -6,8 +6,9 @@ import {
   languages,
   // useTranslations,
 } from '../i18n/utils';
-import Autocomplete from '../components/Autocomplete/Autocomplete';
+// import Autocomplete from '../components/Autocomplete/Autocomplete';
 import LanguagePicker from '../components/Dropdown/Dropdown';
+import Menu from '../components/Menu/Menu';
 
 import { ingredientsData } from '../data/ingredients';
 import { prepareIngredientsForAutocomplete } from '../data/dataHelper';
@@ -19,6 +20,8 @@ const currentLang = getLangFromUrl(Astro.url);
 // const t = useTranslations(lang);
 const ingredientsRaw = await ingredientsData();
 const ingredients = prepareIngredientsForAutocomplete(ingredientsRaw, currentLang);
+
+componentsData.menuCourse.ingredientsSelector.ingredients = ingredients;
 
 const langItems = Object.entries(languages)
   .map(([
@@ -49,6 +52,12 @@ const langItems = Object.entries(languages)
       radios={false}
     />
 
+    <Menu
+      client:load
+      {...componentsData}
+    />
+
+    <!--
     <Autocomplete
       client:load
       input={{
@@ -62,6 +71,7 @@ const langItems = Object.entries(languages)
       }}
       items={ingredients}
     />
+    -->
 
     <!-- <p>new localized index {t('nav.foo')}</p> -->
   </main>
