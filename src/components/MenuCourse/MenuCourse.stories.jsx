@@ -17,6 +17,7 @@ export const MenuCourse = {
       size: 's',
     },
     heading: {
+      editable: true,
       level: '2',
       text: 'Apéro',
       visualLevel: '4',
