@@ -18,7 +18,7 @@ export default function Menu(props) {
   ]);
 
   const addCourseAtIndex = (index) => {
-    const addedCourse = [
+    setCourses([
       ...courses()
         .slice(0, index),
       {
@@ -27,9 +27,16 @@ export default function Menu(props) {
       },
       ...courses()
         .slice(index),
-    ];
+    ]);
+  };
 
-    setCourses(addedCourse);
+  const removeCourseAtIndex = (index) => {
+    setCourses([
+      ...courses()
+        .slice(0, index),
+      ...courses()
+        .slice(index + 1),
+    ]);
   };
 
   return (
@@ -44,6 +51,9 @@ export default function Menu(props) {
             <MenuCourse
               {...course}
               index={index() + 1}
+              click={() => {
+                removeCourseAtIndex(index());
+              }}
             />
             <AddBar click={() => {
               addCourseAtIndex(index() + 1);

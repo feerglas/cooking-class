@@ -7,7 +7,14 @@ export default function MenuCourse(props) {
     <Section
       index={props.index}
       heading={props.heading}
-      button={props.button}
+      button={{
+        ...props.button,
+        click: (evt) => {
+          if (props.click) {
+            props.click(evt);
+          }
+        },
+      }}
     >
       <IngredientsSelector {...props.ingredientsSelector} />
     </Section>
